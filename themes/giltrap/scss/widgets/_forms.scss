@@ -1,0 +1,72 @@
+
+input, select {
+	color: $brandGrey;
+	
+	@include input-placeholder {
+		@include opacity(1.0);
+		text-transform: uppercase;
+		font-weight: bold;
+		color: $brandGrey;
+	}
+}
+
+input:focus {
+	@include input-placeholder {
+		color:transparent; 
+	}
+}
+	
+input, button {
+	@include border-radius(0);
+}
+
+.Form {
+	form > .message {
+	}
+	
+	.field {
+		overflow: visible;
+		clear: both;
+		position: relative;
+		
+		> label.left {
+		}
+		
+		.middleColumn {
+			overflow: hidden;
+		
+			input.text {
+			}
+
+			textarea {
+			}
+
+			input.text,
+			textarea {
+				
+				&.required,
+				&.holder-required {
+					color: white;
+				}
+			}
+			
+			> label {
+				display: block;
+				float: left;
+			}
+		}
+		> .message {
+		}
+	}
+	
+	.Actions {
+		padding: 30px 0;
+		
+		input {
+		}
+		
+		#ForgotPassword {
+			padding: 30px 0 0 0;
+		}
+	}
+}

@@ -1,0 +1,50 @@
+.Pagination {
+	display: block;
+	
+	.PageNumbers {
+		overflow: hidden;
+		min-height: 30px;
+		
+		li {
+			display: block;
+			width: 30px;
+			height: 30px;
+			float: left;
+			margin: 0 $gridSpacing 0 0;
+			
+			a {
+				color: white;
+				display: block;
+				line-height: 30px;
+				width: 30px;
+				height: 30px;
+				text-align: center;
+				background: $backgroundColour;
+				font-weight: bold;
+				font-size: 1.1em;
+				cursor: pointer;
+			}
+			
+			&.Current a,
+			a:hover {
+				background: white;
+				color: $textColour;
+				text-decoration: none;
+			}
+			
+			&.Spacer {
+				width: 28px;
+				height: 28px;
+				border: 1px solid $backgroundColour;
+				background: white;
+			}
+			
+			&.Previous,
+			&.Next {
+				a {
+					// Styles for prev / next pager buttons
+				}
+			}
+		}
+	}
+}

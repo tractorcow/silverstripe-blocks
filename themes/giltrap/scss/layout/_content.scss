@@ -1,0 +1,21 @@
+
+
+body {
+	@extend .DefaultTypography;
+}
+
+.typography {
+	overflow: hidden;
+}
+
+a {
+	// color: ?
+	text-decoration: none;
+	
+	&:hover {
+		// color: ?
+		text-decoration: underline;
+	}
+}
+
+@import '_headings.scss';

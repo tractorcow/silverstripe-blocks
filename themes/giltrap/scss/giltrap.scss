@@ -1,0 +1,24 @@
+// Includes
+@import 'thirdparty/_core.scss';
+@import 'includes/_colours.scss';
+@import 'includes/_mixins.scss';
+@import 'includes/_fonts.scss';
+
+// Include all site specific styles
+@import 'thirdparty/_html5.reset.scss';
+@import 'typography.scss';
+
+// Layout - Page
+@import 'layout/_layout.scss';
+@import 'layout/_header.scss';
+@import 'layout/_footer.scss';
+@import 'layout/_content.scss';
+
+// Layout - Widgets
+@import 'widgets/_forms.scss';
+@import 'widgets/_pagination.scss';
+
+// Page templates
+@import 'pages/_contentpage.scss';
+@import 'pages/_home.scss';
+@import 'pages/_searchresults.scss';

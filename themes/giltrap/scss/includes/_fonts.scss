@@ -1,0 +1,18 @@
+@import "compass/css3/font-face";
+
+@mixin make-font($name, $weight, $as) {
+	$woff: "#{$name}/#{$weight}/#{$name}-#{$weight}.woff";
+	$ttf:  "#{$name}/#{$weight}/#{$name}-#{$weight}.ttf";
+	$svg:  "#{$name}/#{$weight}/#{$name}-#{$weight}.svg";
+	$eot:  "#{$name}/#{$weight}/#{$name}-#{$weight}.eot";
+	@include font-face($name, font-files($woff, $ttf, $svg), $eot, #{$as});
+}
+
+@include make-font("Gotham", 'Light', 'Normal');
+@include make-font("Gotham", 'Book', 'Bold');
+
+// To use gotham light
+// p { font-family: Gotham; font-weight: normal; }
+
+// To use gotham Book
+// p { font-family: Gotham; font-weight: bold; }

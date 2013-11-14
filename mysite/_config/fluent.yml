@@ -1,0 +1,24 @@
+---
+Name: myfluentconfig
+After: '#fluentconfig'
+---
+Fluent:
+  default_locale: en_NZ
+  locales:
+    - en_NZ
+    - en_AU
+    - es_ES
+  aliases: 
+    en_NZ: 'nz'
+    en_AU: 'au'
+    es_ES: 'es'
+---
+Name: fluenti18nconfig
+After: '#fluenti18nconfig'
+---
+i18n:
+  default_locale: en_NZ
+  all_locales:
+    en_NZ: 'New Zealand'
+    en_AU: 'Australia'
+    es_ES: 'Spanish'

@@ -1,0 +1,18 @@
+
+// Layout is the 'default layout' class. You can remove it for pages that have their own sizing mechanism
+.Layout {
+	width: gridSize(4);
+	margin: 0 auto;
+	@include pie-clearfix;
+	
+	@include tablet {
+		width: gridSize(3);
+	}
+	@include mini {
+		width: gridSize(2);
+	}
+	@include mobile {
+		width: auto;
+		margin: 0 $mobileSpacing;
+	}
+}

@@ -1,0 +1,16 @@
+---
+Name: mysite
+---
+SSViewer:
+  theme: 'giltrap'
+MySQLDatabase:
+  connection_charset: 'utf8'
+Filesystem:
+  file_create_mask: 02777
+  folder_create_mask: 02777
+---
+Name: myextensions
+---
+FormField:
+  extensions:
+    - FieldExtension

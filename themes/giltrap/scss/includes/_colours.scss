@@ -1,8 +1,16 @@
 
 // Brand colours
 $brandRed: #6E0000;
-$brandGrey: #59595E;
+
+// Greys from lightest todarkest
+$brandGreyLight5: #ECECEC;
+$brandGreyLight4: #CCCCCC;
+$brandGreyLight3: #97999C;
+$brandGreyLight2: #818386;
+$brandGreyLight: #6D6F72;
+$brandGrey: #5A5B5E;
+$brandGreyDark: #464748;
 
 // Basic Colours
-$textColour: $brandGrey;
-$backgroundColour: $brandGrey;
+$textColour: $brandGrey; // default text colour
+$backgroundColour: $brandGreyLight3; // default 'box' background

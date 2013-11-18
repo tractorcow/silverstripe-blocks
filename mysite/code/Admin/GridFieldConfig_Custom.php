@@ -3,7 +3,7 @@
 /**
  * Custom gridfield config with extensions for sorting, relation handling, and bulk management
  */
-class GridFieldConfig_Custom extends GridFieldConfig_RecordEditor {
+class GridFieldConfig_Custom extends GridFieldConfig_RelationEditor {
 	
 	/**
 	 * @return GridFieldConfig_Custom

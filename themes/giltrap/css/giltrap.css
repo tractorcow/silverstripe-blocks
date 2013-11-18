@@ -407,6 +407,21 @@ mark {
 body .Container {
   width: 1270px;
   margin: 0 auto;
+  *zoom: 1;
+}
+body .Container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body .col {
+  float: left;
+}
+body .grid {
+  width: 310px;
+}
+body .grid-margined {
+  width: 320px;
 }
 
 #TopBar {
@@ -447,7 +462,6 @@ body .Container {
 }
 
 #Header {
-  *zoom: 1;
   position: relative;
   background: #6e0000;
   *zoom: 1;
@@ -457,28 +471,18 @@ body .Container {
   display: table;
   clear: both;
 }
-#Header:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-@media screen and (min-width: 960px) and (max-width: 1289px) {
-  #Header {
-    width: 950px;
-  }
-}
 @media screen and (min-width: 638px) and (max-width: 959px) {
-  #Header {
+  #Header .Container {
     width: 630px;
   }
 }
 @media screen and (max-width: 637px) {
-  #Header {
+  #Header .Container {
     width: auto;
     margin: 10px;
   }
 }
-#Header #TouchMenu {
+#Header .Container #TouchMenu {
   display: none;
 }
 #Header .Logo, #Header .Menu {
@@ -521,6 +525,33 @@ body .Container {
   }
 }
 
+#FooterModules {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+#FooterModules h3 {
+  text-transform: uppercase;
+  color: #6d6f72;
+  margin: 5px 0 0 25px;
+  line-height: 1.2;
+  font-size: 24px;
+  width: 60%;
+}
+#FooterModules h4 {
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  line-height: 1.3;
+  width: 70%;
+  font-size: 18px;
+}
+#FooterModules h4 a {
+  color: #818386;
+}
+#FooterModules p a {
+  text-transform: uppercase;
+  color: #464748;
+}
+
 #Footer {
   margin-top: 20px;
 }
@@ -529,6 +560,19 @@ body .Container {
   width: 1220px;
   padding: 30px 25px;
   margin-bottom: 5px;
+}
+#Footer .Bar dl {
+  color: #fff;
+}
+#Footer .Bar dl dt, #Footer .Bar dl dd {
+  float: left;
+  display: block;
+  margin-top: 5px;
+}
+#Footer .Bar dl dt {
+  text-transform: uppercase;
+  width: 100px;
+  clear: left;
 }
 #Footer p {
   color: #b0b1b2;

@@ -40,28 +40,24 @@
 
 #Header {
 	$topbottom: $gridSpacing * 2;
-	@include pie-clearfix;
-	//width: gridSize(4);
-	//margin: $gridSpacing auto $gridSpacing auto;
 	position: relative;
 	background: $brandRed;
 	
 	@include pie-clearfix;
-	
-	@include tablet {
-		width: gridSize(3);
-	}
-	
-	@include mini {
-		width: gridSize(2);
-	}
-	@include mobile {
-		width: auto;
-		margin: $mobileSpacing;
-	}
 
-	#TouchMenu {
-		display: none;
+	.Container {
+		
+		@include mini {
+			width: gridSize(2);
+		}
+		@include mobile {
+			width: auto;
+			margin: $mobileSpacing;
+		}
+
+		#TouchMenu {
+			display: none;
+		}
 	}
 
 	.Logo, .Menu {

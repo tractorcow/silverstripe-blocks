@@ -1,7 +1,50 @@
+#TopBar {
+	$navSpacing: 10px;
+
+	@include pie-clearfix;
+	padding: $gridSpacing 0;
+
+	nav {
+		@include caps;
+		float: left;
+
+		a {
+			color: $brandGreyLight2;
+		}
+	}
+
+	.Menu {
+		width: gridSize(3);
+		text-align: right;
+
+		ul {
+			margin-right: 110px;
+		}
+		
+		ul li {
+			display: inline;
+			margin-left: 30px;
+		}
+	}
+
+	.Secondary {
+		width: gridSize(1);
+		ul li {
+			display: inline;
+			margin-left: $navSpacing;
+			padding-right: $navSpacing;
+			border-right: 1px solid $brandGreyLight2;
+		}
+	}
+}
+
 #Header {
-	width: gridSize(4);
-	margin: $gridSpacing auto $gridSpacing auto;
+	$topbottom: $gridSpacing * 2;
+	@include pie-clearfix;
+	//width: gridSize(4);
+	//margin: $gridSpacing auto $gridSpacing auto;
 	position: relative;
+	background: $brandRed;
 	
 	@include pie-clearfix;
 	
@@ -20,9 +63,44 @@
 	#TouchMenu {
 		display: none;
 	}
+
+	.Logo, .Menu {
+		float: left;
+	}
+
+	.Logo {
+		display: block;
+		margin: $topbottom 0;
+		width: $gridSize + $gridSpacing;
+	}
+
+	.Menu, .Search {
+		margin-top: 45px;
+	}
+
+	.Search {
+		width: $gridSize;
+		float: right;
+		text-align: right;
+	}
 	
 	.Menu {
-		
+		@include caps;
+
+		li { 
+			float: left;
+			margin: 0 20px 0 0;
+			padding: 0;
+			line-height: 1;
+
+			a {
+				// Height with padding etc: 50px
+				display: block;
+				color: #fff;
+				padding: 10px 10px 28px 10px;
+				background: blue;
+			}
+		}
 	}
 		
 	// Activate mobile menu for 2 column view or smaller

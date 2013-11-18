@@ -9,6 +9,9 @@
  */
 class Page extends SiteTree {
 	
+	private static $has_many = array(
+		'FooterModules' => 'FooterModule'
+	);
 }
 
 

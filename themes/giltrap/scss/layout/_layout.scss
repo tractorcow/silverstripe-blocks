@@ -1,3 +1,6 @@
-
 body {
+	.Container {
+		width: gridSize(4);
+		margin: 0 auto;
+	}
 }

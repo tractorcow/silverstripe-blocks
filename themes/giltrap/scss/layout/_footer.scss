@@ -1,4 +1,23 @@
-
 #Footer {
-	
+	$paddingx: 25px;
+
+	margin-top: $gridSpacing * 2;
+
+	.Bar{
+		background: $brandGreyLight3;
+		width: gridSize(4) - ($paddingx * 2);
+		padding: 30px $paddingx;
+		margin-bottom: $gridSpacing / 2;
+	}	
+
+	p {
+		color: $footerGrey;
+		@include caps;
+		margin-left: $paddingx;
+
+		a {
+			color: $footerGrey;
+		}
+	}
+
 }

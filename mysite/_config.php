@@ -4,7 +4,7 @@ global $project;
 $project = 'mysite';
 
 global $database;
-$database = 'giltrap_db';
+$database = 'brr_giltrap';
 
 // Fulltext setup (if necessary)
 //FulltextSearchable::enable();

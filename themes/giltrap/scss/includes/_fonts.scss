@@ -16,3 +16,7 @@
 
 // To use gotham Book
 // p { font-family: Gotham; font-weight: bold; }
+
+@mixin caps(){
+	text-transform: uppercase;
+}

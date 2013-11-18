@@ -37,6 +37,12 @@ class Page extends SiteTree {
     	$fields->addFieldToTab("Root.WhatCanWeDoForYou", $gridField);
     	return $fields;
     }
+
+    // Placehold.it function for template build
+	public function PlaceholdIt($width, $height, $text){
+		$text = str_replace(" ", "+", $text);
+		return '<img width="'.$width.'" height="'.$height.'" src="http://placehold.it/'.$width.'x'.$height.'&text='.$text.'" />';
+	}
 }
 
 

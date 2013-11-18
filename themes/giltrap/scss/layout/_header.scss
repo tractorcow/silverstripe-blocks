@@ -1,17 +1,9 @@
 #TopBar {
 	$navSpacing: 10px;
+	$menuHeight: 25px;
 
 	@include pie-clearfix;
 	padding: $gridSpacing 0;
-
-	nav {
-		@include caps;
-		float: left;
-
-		a {
-			color: $brandGreyLight2;
-		}
-	}
 
 	.Menu {
 		width: gridSize(3);
@@ -25,6 +17,7 @@
 			display: inline;
 			margin-left: 30px;
 		}
+
 	}
 
 	.Secondary {
@@ -36,17 +29,67 @@
 			border-right: 1px solid $brandGreyLight2;
 		}
 	}
+
+	nav, .Menu {
+		@include caps;
+		float: left;
+		position: relative;
+
+		a {
+			color: $brandGreyLight2;
+			font-weight: bold;
+		}
+
+		a:hover {
+			text-decoration: none;
+			color: $brandRed;
+		}
+
+		li {
+			position: relative;
+			
+			ul {
+				position: absolute;
+				z-index: 10;
+				margin: 0;
+				background: #fff;
+				border: 1px solid #000;
+				top: $menuHeight;
+				left: -($gridSpacing - 1);
+
+				li {
+					display: block;
+					margin: 0;
+					text-align: left;
+
+					a {
+						display: block;
+						color: #000;
+						padding: ($gridSpacing) ($gridSpacing * 6) ($gridSpacing) ($gridSpacing);
+					}
+
+					a:hover {
+						background: $brandGreyRollover;
+						color: $brandRed;
+					}
+				}
+			}
+		}
+	}
 }
 
 #Header {
 	$topbottom: $gridSpacing * 2;
+	$pictureNavWidth: 140px + $topbottom;
+	
 	position: relative;
 	background: $brandRed;
 	
 	@include pie-clearfix;
 
 	.Container {
-		
+		position: relative;
+
 		@include mini {
 			width: gridSize(2);
 		}
@@ -85,7 +128,7 @@
 
 		li { 
 			float: left;
-			margin: 0 20px 0 0;
+			margin: 0;
 			padding: 0;
 			line-height: 1;
 
@@ -93,8 +136,56 @@
 				// Height with padding etc: 50px
 				display: block;
 				color: #fff;
-				padding: 10px 10px 28px 10px;
-				background: blue;
+				padding: 10px 15px 25px 15px;
+				font-size: 15px;
+			}
+
+			a:hover {
+				background: $brandRed2;
+				text-decoration: none;
+			}
+
+			ul {
+				left: 0px;
+				right: 0px;
+				position: absolute;
+				background: #fff;
+				border: 1px solid $brandRed;
+				border-top: none;
+				display: block;
+
+				li {
+					float: left;
+
+					a {
+						width: $pictureNavWidth;
+						padding: ($gridSpacing*4) ($gridSpacing*2);
+						text-align: center;
+
+						img, span {
+							display: block;
+							color: #000;
+						}
+
+						img {
+							margin: 0 auto $gridSpacing*2 auto; 
+						}
+
+						span {
+							color: #000;
+							font-weight: bold;
+							font-size: 12px;
+						}
+					}
+
+					a:hover {
+						background: $brandGreyRollover;
+						
+						span {
+							color: $brandRed;
+						}
+					}
+				}
 			}
 		}
 	}

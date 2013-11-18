@@ -4,9 +4,20 @@
 			<nav class="Menu" id="Navigation">
 				<ul>
 					<% loop Menu(1) %>
+						<% if Children %>
+						<li class="MenuItem">
+							<% include Link %>
+							<ul>
+							<% loop Children %>
+								<li><% include Link %></li>
+							<% end_loop %>
+							</ul>
+						</li>
+						<% else %>
 						<li class="MenuItem NoChildren">
 							<% include Link %>
 						</li>
+						<% end_if %>
 					<% end_loop %>
 				</ul>
 			</nav>
@@ -28,7 +39,7 @@
 		</div>
 		<% include ProductNavigation %>	
 		<div class="Search">
-			hello
+			Search Box
 		</div>
 	</div>
 </header>

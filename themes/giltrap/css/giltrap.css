@@ -12,6 +12,20 @@
   font-weight: Bold;
 }
 
+@font-face {
+  font-family: "GothamLight";
+  src: url('../fonts/Gotham/Light/Gotham-Light.eot');
+  src: url('../fonts/Gotham/Light/Gotham-Light.eot?#iefix') format('eot'), url('../fonts/Gotham/Light/Gotham-Light.woff') format('woff'), url('../fonts/Gotham/Light/Gotham-Light.ttf') format('truetype'), url('../fonts/Gotham/Light/Gotham-Light.svg') format('svg');
+  font-weight: Normal;
+}
+
+@font-face {
+  font-family: "GothamBook";
+  src: url('../fonts/Gotham/Book/Gotham-Book.eot');
+  src: url('../fonts/Gotham/Book/Gotham-Book.eot?#iefix') format('eot'), url('../fonts/Gotham/Book/Gotham-Book.woff') format('woff'), url('../fonts/Gotham/Book/Gotham-Book.ttf') format('truetype'), url('../fonts/Gotham/Book/Gotham-Book.svg') format('svg');
+  font-weight: Normal;
+}
+
 /*
 	HTML5 Reset :: style.css
 	----------------------------------------------------------
@@ -275,12 +289,20 @@ mark {
 /* Media queries!
 -------------------------------------------------------------------------------*/
 /* Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
-.fontNormal, .DefaultTypography, .typography > *, body {
+.fontNormal {
   font-family: Arial, sans-serif;
 }
 
-.fontGotham {
+.fontGotham, .DefaultTypography, .typography > *, body {
   font-family: Gotham, Arial, sans-serif;
+}
+
+.fontGothamLight {
+  font-family: GothamLight, Arial, sans-serif;
+}
+
+.fontGothamBook {
+  font-family: GothamBook, Arial, sans-serif;
 }
 
 .DefaultTypography, .typography > *, body {
@@ -433,13 +455,6 @@ body .grid-margined {
   display: table;
   clear: both;
 }
-#TopBar nav {
-  text-transform: uppercase;
-  float: left;
-}
-#TopBar nav a {
-  color: #818386;
-}
 #TopBar .Menu {
   width: 950px;
   text-align: right;
@@ -460,6 +475,45 @@ body .grid-margined {
   padding-right: 10px;
   border-right: 1px solid #818386;
 }
+#TopBar nav, #TopBar .Menu {
+  text-transform: uppercase;
+  float: left;
+  position: relative;
+}
+#TopBar nav a, #TopBar .Menu a {
+  color: #818386;
+  font-weight: bold;
+}
+#TopBar nav a:hover, #TopBar .Menu a:hover {
+  text-decoration: none;
+  color: #6e0000;
+}
+#TopBar nav li, #TopBar .Menu li {
+  position: relative;
+}
+#TopBar nav li ul, #TopBar .Menu li ul {
+  position: absolute;
+  z-index: 10;
+  margin: 0;
+  background: #fff;
+  border: 1px solid #000;
+  top: 25px;
+  left: -9px;
+}
+#TopBar nav li ul li, #TopBar .Menu li ul li {
+  display: block;
+  margin: 0;
+  text-align: left;
+}
+#TopBar nav li ul li a, #TopBar .Menu li ul li a {
+  display: block;
+  color: #000;
+  padding: 10px 60px 10px 10px;
+}
+#TopBar nav li ul li a:hover, #TopBar .Menu li ul li a:hover {
+  background: #e4e4e4;
+  color: #6e0000;
+}
 
 #Header {
   position: relative;
@@ -470,6 +524,9 @@ body .grid-margined {
   content: "";
   display: table;
   clear: both;
+}
+#Header .Container {
+  position: relative;
 }
 @media screen and (min-width: 638px) and (max-width: 959px) {
   #Header .Container {
@@ -506,15 +563,54 @@ body .grid-margined {
 }
 #Header .Menu li {
   float: left;
-  margin: 0 20px 0 0;
+  margin: 0;
   padding: 0;
   line-height: 1;
 }
 #Header .Menu li a {
   display: block;
   color: #fff;
-  padding: 10px 10px 28px 10px;
-  background: blue;
+  padding: 10px 15px 25px 15px;
+  font-size: 15px;
+}
+#Header .Menu li a:hover {
+  background: #971914;
+  text-decoration: none;
+}
+#Header .Menu li ul {
+  left: 0px;
+  right: 0px;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #6e0000;
+  border-top: none;
+  display: block;
+}
+#Header .Menu li ul li {
+  float: left;
+}
+#Header .Menu li ul li a {
+  width: 160px;
+  padding: 40px 20px;
+  text-align: center;
+}
+#Header .Menu li ul li a img, #Header .Menu li ul li a span {
+  display: block;
+  color: #000;
+}
+#Header .Menu li ul li a img {
+  margin: 0 auto 20px auto;
+}
+#Header .Menu li ul li a span {
+  color: #000;
+  font-weight: bold;
+  font-size: 12px;
+}
+#Header .Menu li ul li a:hover {
+  background: #e4e4e4;
+}
+#Header .Menu li ul li a:hover span {
+  color: #6e0000;
 }
 @media screen and (max-width: 959px) {
   #Header #TouchMenu {
@@ -550,6 +646,7 @@ body .grid-margined {
 #FooterModules p a {
   text-transform: uppercase;
   color: #464748;
+  font-weight: bold;
 }
 
 #Footer {

@@ -1,9 +1,17 @@
-.fontNormal, .DefaultTypography, .typography > * {
+.fontNormal {
   font-family: Arial, sans-serif;
 }
 
-.fontGotham {
+.fontGotham, .DefaultTypography, .typography > * {
   font-family: Gotham, Arial, sans-serif;
+}
+
+.fontGothamLight {
+  font-family: GothamLight, Arial, sans-serif;
+}
+
+.fontGothamBook {
+  font-family: GothamBook, Arial, sans-serif;
 }
 
 .DefaultTypography, .typography > * {

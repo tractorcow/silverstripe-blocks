@@ -5,13 +5,22 @@
 .fontNormal {
 	font-family: Arial, sans-serif;
 }
+
 .fontGotham {
 	font-family: Gotham, Arial, sans-serif;
 }
 
+.fontGothamLight {
+	font-family: GothamLight, Arial, sans-serif;
+}
+
+.fontGothamBook {
+	font-family: GothamBook, Arial, sans-serif;
+}
+
 .DefaultTypography {
 	font-size: 12px;
-	@extend .fontNormal;
+	@extend .fontGotham;
 	line-height: 1.3;
 	color: $textColour;
 	

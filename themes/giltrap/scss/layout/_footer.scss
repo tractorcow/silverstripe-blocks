@@ -26,6 +26,7 @@
 	p a {
 		@include caps;
 		color: $brandGreyDark;
+		font-weight: bold;
 	}
 }
 

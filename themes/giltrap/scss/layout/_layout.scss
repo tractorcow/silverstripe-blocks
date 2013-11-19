@@ -1,19 +1,71 @@
-body {
-	.Container {
-		width: gridSize(4);
-		margin: 0 auto;
-		@include pie-clearfix;
+/* Dev Stuff */
+// Turn off rollover navigation
+.WithChildren ul {
+	display: none !important;
+}
+
+.Container {
+	width: gridSize(4);
+	margin: 0 auto;
+	@include pie-clearfix;
+}
+
+.col {
+	float: left;
+}
+
+.grid {
+	width: $gridSize;
+	margin: $gridSpacing $gridSpacing 0 0;
+}
+
+.grid.double 	{ width: gridSize(2); }
+.grid.triple 	{ width: gridSize(3); }
+.grid.stacked 	{ margin-right: 0; }
+
+/* HomePage */
+.HomePage {
+	$widgetHeight: 230px; 
+
+	.ProductListing {
+		$imageWidth: 200px;
+		margin: ($gridSpacing * 4) auto;
+
+		text-align: center;
+
+		img {
+			display: block;
+			margin: 0 auto $gridSpacing * 2 auto;
+		}
+
+		p a {
+			background: $brandGreyRollover;
+			@include caps;
+			display: block;
+			padding: $gridSpacing;
+			color: #000;
+			width: $imageWidth - ($gridSpacing * 2);
+			margin: 0 auto;
+			font-weight: bold;
+			font-size: 14px;
+		}
 	}
 
-	.col {
-		float: left;
+	.Widget {
+		height: $widgetHeight;
+		margin-bottom: $gridSpacing;
+		position: relative;
+		background: blue;
+		overflow: hidden;
 	}
 
-	.grid {
-		width: $gridSize;
+	.Widget.Stacked {
+		height: $widgetHeight + $gridSpacing;
+		margin-bottom: 0;
 	}
 
-	.grid-margined {
-		width: $gridSize + $gridSpacing;
+	.Widget.Double {
+		height: rowSpan(2, $widgetHeight);
 	}
+
 }

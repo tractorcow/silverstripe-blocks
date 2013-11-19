@@ -12,7 +12,7 @@
 		<![endif]-->
 		<% require themedCSS('giltrap') %>
 	</head>
-	<body>
+	<body class="$ClassName">
 		<% include Header %>
 		$Layout
 		<% include Footer %>

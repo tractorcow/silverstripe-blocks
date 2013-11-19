@@ -1,25 +1,45 @@
-<article class="Layout Home">
-	<% if Banners %>
-		<section class="BannerArea">
-			<ul class="Banners">
-				<% loop Banners %>
-					<li class="Banner" data-title="$Title.ATT">
-						<div class="Copy typography">
-							$Description
-						</div>
-						$Image.CroppedImage(593, 356)
-					</li>
-				<% end_loop %>
-			</ul>
-		</section>
-	<% end_if %>
-	<section>
-		<h1>$Title.XML</h1>
-		<div class="Copy typography">
-			$Content
-		</div>
-		<% if Form %>
-			<div class="Form">$Form</div>
-		<% end_if %>
-	</section>
-</article>
+<!-- Homepage hero section -->
+<div class="Container">
+	<div class="col grid triple">
+		<div class="Widget Span Double"></div>
+	</div>
+	<div class="col grid stacked">
+		<div class="Widget"></div>
+		<div class="Widget"></div>
+	</div>
+</div>
+
+<!-- Homepage featured products -->
+<div class="Container ProductListing">
+	<div class="col grid">
+		<a href="#">$PlaceholdIt(200,115,'Product Image')</a>
+		<p><a href="#">View Product</a></p>
+	</div>
+	<div class="col grid">
+		<a href="#">$PlaceholdIt(200,115,'Product Image')</a>
+		<p><a href="#">View Product</a></p>
+	</div>
+	<div class="col grid">
+		<a href="#">$PlaceholdIt(200,115,'Product Image')</a>
+		<p><a href="#">View Product</a></p>
+	</div>
+	<div class="col grid stacked">
+		<a href="#">$PlaceholdIt(200,115,'Product Image')</a>
+		<p><a href="#">View Product</a></p>
+	</div>
+</div>
+
+<!-- Homepage bottom section -->
+<div class="Container">
+	<div class="col grid">
+		<div class="Widget Stacked"></div>
+		<div class="Widget"></div>
+	</div>
+	<div class="col grid">
+		<div class="Widget"></div>
+		<div class="Widget"></div>
+	</div>
+	<div class="col grid double stacked">
+		<div class="Widget Span Double"></div>
+	</div>
+</div>

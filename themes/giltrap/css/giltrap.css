@@ -426,24 +426,76 @@ mark {
   margin-bottom: 0;
 }
 
-body .Container {
+/* Dev Stuff */
+.WithChildren ul {
+  display: none !important;
+}
+
+.Container {
   width: 1270px;
   margin: 0 auto;
   *zoom: 1;
 }
-body .Container:after {
+.Container:after {
   content: "";
   display: table;
   clear: both;
 }
-body .col {
+
+.col {
   float: left;
 }
-body .grid {
+
+.grid {
   width: 310px;
+  margin: 10px 10px 0 0;
 }
-body .grid-margined {
-  width: 320px;
+
+.grid.double {
+  width: 630px;
+}
+
+.grid.triple {
+  width: 950px;
+}
+
+.grid.stacked {
+  margin-right: 0;
+}
+
+/* HomePage */
+.HomePage .ProductListing {
+  margin: 40px auto;
+  text-align: center;
+}
+.HomePage .ProductListing img {
+  display: block;
+  margin: 0 auto 20px auto;
+}
+.HomePage .ProductListing p a {
+  background: #e4e4e4;
+  text-transform: uppercase;
+  display: block;
+  padding: 10px;
+  color: #000;
+  width: 180px;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 14px;
+}
+.HomePage .Widget {
+  height: 230px;
+  margin-bottom: 10px;
+  position: relative;
+  background: blue;
+  overflow: hidden;
+}
+.HomePage .Widget.Stacked {
+  height: 240px;
+  margin-bottom: 0;
+}
+.HomePage .Widget.Double {
+  height: 470px;
 }
 
 #TopBar {

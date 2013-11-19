@@ -5,7 +5,7 @@
 				<ul>
 					<% loop Menu(1) %>
 						<% if Children %>
-						<li class="MenuItem">
+						<li class="MenuItem WithChildren">
 							<% include Link %>
 							<ul>
 							<% loop Children %>

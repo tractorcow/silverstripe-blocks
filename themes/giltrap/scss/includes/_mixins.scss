@@ -8,6 +8,12 @@ $cellPadding: 15px; // Internal padding
 	@return $columns * ($gridSize + $gridSpacing) - $gridSpacing;
 }
 
+@function rowSpan($rows, $height){
+	@return ($rows * $height) + $gridSpacing;
+}
+
+
+
 @mixin input-placeholder {
     &.placeholder { @content; }
     &:-moz-placeholder { @content; }

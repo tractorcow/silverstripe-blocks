@@ -3,7 +3,7 @@
 	<ul>
 		<% loop ChildrenOf(products) %>
 			<% if Children %>
-			<li class="MenuItem">
+			<li class="MenuItem WithChildren">
 				<% include Link %>
 				<ul>
 					<% loop Children %>

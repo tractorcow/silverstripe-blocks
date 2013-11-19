@@ -14,7 +14,13 @@ class HomePage extends Page {
 		'Bottom Teaser 1',
 		'Bottom Teaser 2'
 	);
-	
+
+	// BottomSlider is just a futureproofing element in case they want to use sections other than
+	// case studies in the future
+	private static $has_one = array(
+		'SecondarySlider' => 'SiteTree'
+	);
+
 	private static $many_many = array(
 		'TeaserBox' => 'TeaserBox',
 	);
@@ -35,4 +41,17 @@ class HomePage extends Page {
 }
 
 class HomePage_Controller extends Page_Controller {	
+
+	/*
+		Gets the slides for the secondary slider across the bottom of the template.
+		At the moment, this is just case studies.
+	*/
+	public function getSecondarySlides(){
+		$sectionClass = 'CaseStudy';
+		return $sectionClass::get()->filter(array('ShowOnHomePage' => '1'));
+
+		// Return a datalist which contains:
+		// Section title
+		// Section slides (Intro, Abstract, Link, Image)
+	}
 }

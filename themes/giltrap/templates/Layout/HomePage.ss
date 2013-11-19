@@ -50,6 +50,8 @@
 		</div>
 	</div>
 	<div class="col grid double stacked">
-		<div class="Widget Span Double"></div>
+		<div class="Widget Span Double">
+			<% include SecondarySlider %>
+		</div>
 	</div>
 </div>

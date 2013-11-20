@@ -1,0 +1,70 @@
+#TopBar {
+	@include pie-clearfix;
+	@include caps;
+
+	$navSpacing: 15px;
+	$menuHeight: 35px;
+	$topPadding: 12px;
+	$fontSize: 12px;
+
+	.Menu, .Secondary {
+		height: $menuHeight;
+		font-size: $fontSize;
+
+		a {
+			color: $brandGrey;
+			display: inline;
+			padding: 0 $navSpacing;
+		}
+
+		a:hover {
+			color: $brandRed;
+			text-decoration: none;
+		}
+
+		li { 
+			float: left; 
+			display: block;
+			height: $menuHeight - $topPadding;
+			padding-top: $topPadding;
+			position: relative;
+
+			ul {
+				position: absolute;
+				background: #fbfbfb;
+				border: 1px solid $brandRed;
+				z-index: 1000;
+				margin: 0;
+				padding: 0;
+				top: $menuHeight;
+
+				li {
+					float: none;
+					height: auto;
+					padding: 0;
+				}
+
+				a {
+					display: block;
+					padding: ($navSpacing / 2) $navSpacing;
+					padding-right: $navSpacing * 4;
+				}
+
+				a:hover {
+					background: $brandGreyLight1;
+				}
+			}
+		}
+	}
+
+	.Menu {
+		float: left;
+		margin-left: $gridSize + $gridSpacing;
+	}
+
+	.Secondary {
+		float: right;
+		li a { border-right: 1px solid $brandGrey; }
+		li:last-of-type a { padding-right: 0; border: 0; }
+	}
+}

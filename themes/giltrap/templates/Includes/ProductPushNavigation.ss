@@ -1,11 +1,9 @@
-<% if ChildrenOf(products) %>
-<nav class="Menu">
-	<ul>
+<div class="Container" id="ProductPushNavigation">
+	<% if ChildrenOf(products) %>
 		<% loop ChildrenOf(products) %>
 			<% if Children %>
-			<li class="MenuItem WithChildren" data-ref="nav-{$URLSegment}">
-				<% include Link %>
-				<ul>
+			<nav class="Menu">
+				<ul id="nav-{$URLSegment}">
 					<% loop Children %>
 					<li>
 						<a href="#">
@@ -15,13 +13,8 @@
 					</li>
 					<% end_loop %>
 				</ul>
-			</li>
-			<% else %>
-			<li class="MenuItem NoChildren">
-				<% include Link %>
-			</li>
+			</nav>
 			<% end_if %>
 		<% end_loop %>
-	</ul>
-</nav>
-<% end_if %>
+	<% end_if %>
+</div>

@@ -1,0 +1,65 @@
+.cycle-overlay {
+	position: absolute; 
+    z-index: 600;
+    background: black; 
+    opacity: .7;
+
+    * {
+    	color: #fff;
+    }
+}
+
+.cycle-prev, .cycle-next {
+	position: absolute;
+	top: 0;
+	width: 30%;
+	opacity: 0;
+	filter: alpha(opacity=0);
+    z-index: 500; 
+	height: 100%;
+	cursor: pointer;
+}
+
+.cycle-prev {
+	left: 0;
+	background: url(../images/arrow-left-slideshow.png) 5% 50% no-repeat;
+}
+
+.cycle-next {
+	right: 0;
+	background: url(../images/arrow-right-slideshow.png) 95% 50% no-repeat;
+}
+
+.cycle-prev:hover, .cycle-next:hover { opacity: .7; filter: alpha(opacity=70) }
+
+.cycle-pager { 
+    width: 100%; 
+    z-index: 500; 
+    position: absolute; 
+    bottom: 20px;
+    right: 15px;
+    overflow: hidden;
+    text-align: right;
+}
+
+.cycle-pager span { 
+    font-family: arial; 
+    font-size: 50px; 
+    width: 13px;
+    height: 13px;
+    display: block;
+    text-indent: -9999px;
+    overflow: hidden;
+    color: $brandRed; 
+    cursor: pointer;
+    background: url(../images/ind-pagination-slider.png) -21px 0 no-repeat;
+    float: right;
+    margin-left: 5px;
+}
+
+.cycle-pager .cycle-pager-active {
+    background: url(../images/ind-pagination-slider.png) 0 0 no-repeat;
+}
+
+.cycle-pager span.cycle-pager-active { color: $brandGrey;}
+.cycle-pager > * { cursor: pointer;}

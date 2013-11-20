@@ -426,9 +426,77 @@ mark {
   margin-bottom: 0;
 }
 
-/* Dev Stuff */
-.WithChildren ul {
-  display: none !important;
+.cycle-overlay {
+  position: absolute;
+  z-index: 600;
+  background: black;
+  opacity: .7;
+}
+.cycle-overlay * {
+  color: #fff;
+}
+
+.cycle-prev, .cycle-next {
+  position: absolute;
+  top: 0;
+  width: 30%;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  z-index: 500;
+  height: 100%;
+  cursor: pointer;
+}
+
+.cycle-prev {
+  left: 0;
+  background: url(../images/arrow-left-slideshow.png) 5% 50% no-repeat;
+}
+
+.cycle-next {
+  right: 0;
+  background: url(../images/arrow-right-slideshow.png) 95% 50% no-repeat;
+}
+
+.cycle-prev:hover, .cycle-next:hover {
+  opacity: .7;
+  filter: alpha(opacity=70);
+}
+
+.cycle-pager {
+  width: 100%;
+  z-index: 500;
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  overflow: hidden;
+  text-align: right;
+}
+
+.cycle-pager span {
+  font-family: arial;
+  font-size: 50px;
+  width: 13px;
+  height: 13px;
+  display: block;
+  text-indent: -9999px;
+  overflow: hidden;
+  color: #6e0000;
+  cursor: pointer;
+  background: url(../images/ind-pagination-slider.png) -21px 0 no-repeat;
+  float: right;
+  margin-left: 5px;
+}
+
+.cycle-pager .cycle-pager-active {
+  background: url(../images/ind-pagination-slider.png) 0 0 no-repeat;
+}
+
+.cycle-pager span.cycle-pager-active {
+  color: #5a5b5e;
+}
+
+.cycle-pager > * {
+  cursor: pointer;
 }
 
 .Container {
@@ -516,6 +584,52 @@ mark {
 }
 
 /* HomePage */
+.HomePage #HeroSlider .cycle-overlay {
+  width: 515px;
+  padding: 20px 25px;
+  bottom: 30px;
+  left: 65px;
+}
+.HomePage #HeroSlider .cycle-overlay .description {
+  font-size: 20px;
+  line-height: 1.6;
+}
+.HomePage #HeroSlider .cycle-overlay .buttons {
+  text-transform: uppercase;
+  overflow: hidden;
+  margin-top: 15px;
+  font-size: 14px;
+}
+.HomePage #HeroSlider .cycle-overlay .buttons a {
+  display: block;
+  float: left;
+  padding: 10px 20px;
+  color: #fff;
+  background: #6e0000;
+  margin-right: 15px;
+}
+.HomePage #HeroSlider .cycle-overlay .buttons .second {
+  background: #97999c;
+}
+.HomePage #SecondarySlider .cycle-overlay {
+  width: 50%;
+  bottom: 0px;
+  top: 0px;
+  right: 0px;
+}
+.HomePage #SecondarySlider .cycle-overlay p {
+  text-transform: uppercase;
+  margin: 20px;
+  line-height: 1.6;
+  font-size: 12px;
+}
+.HomePage #SecondarySlider .cycle-overlay .intro {
+  font-size: 20px;
+}
+.HomePage #SecondarySlider .cycle-overlay .description {
+  text-transform: none;
+  font-size: 14px;
+}
 .HomePage .ProductListing {
   margin: 40px auto;
   text-align: center;
@@ -566,70 +680,114 @@ mark {
 
 #TopBar {
   *zoom: 1;
-  padding: 10px 0;
+  text-transform: uppercase;
 }
 #TopBar:after {
   content: "";
   display: table;
   clear: both;
 }
-#TopBar .Menu {
-  width: 950px;
-  text-align: right;
+#TopBar .Menu, #TopBar .Secondary {
+  height: 35px;
+  font-size: 12px;
 }
-#TopBar .Menu ul {
-  margin-right: 110px;
-}
-#TopBar .Menu ul li {
+#TopBar .Menu a, #TopBar .Secondary a {
+  color: #5a5b5e;
   display: inline;
-  margin-left: 30px;
+  padding: 0 15px;
+}
+#TopBar .Menu a:hover, #TopBar .Secondary a:hover {
+  color: #6e0000;
+  text-decoration: none;
+}
+#TopBar .Menu li, #TopBar .Secondary li {
+  float: left;
+  display: block;
+  height: 23px;
+  padding-top: 12px;
+  position: relative;
+}
+#TopBar .Menu li ul, #TopBar .Secondary li ul {
+  position: absolute;
+  background: #fbfbfb;
+  border: 1px solid #6e0000;
+  z-index: 1000;
+  margin: 0;
+  padding: 0;
+  top: 35px;
+}
+#TopBar .Menu li ul li, #TopBar .Secondary li ul li {
+  float: none;
+  height: auto;
+  padding: 0;
+}
+#TopBar .Menu li ul a, #TopBar .Secondary li ul a {
+  display: block;
+  padding: 7.5px 15px;
+  padding-right: 60px;
+}
+#TopBar .Menu li ul a:hover, #TopBar .Secondary li ul a:hover {
+  background: #e4e4e4;
+}
+#TopBar .Menu {
+  float: left;
+  margin-left: 320px;
 }
 #TopBar .Secondary {
-  width: 310px;
+  float: right;
 }
-#TopBar .Secondary ul li {
-  display: inline;
-  margin-left: 10px;
-  padding-right: 10px;
-  border-right: 1px solid #818386;
+#TopBar .Secondary li a {
+  border-right: 1px solid #5a5b5e;
 }
-#TopBar nav, #TopBar .Menu {
+#TopBar .Secondary li:last-of-type a {
+  padding-right: 0;
+  border: 0;
+}
+
+.Menu .WithChildren ul {
+  display: none;
+}
+
+#ProductPushNavigation .Menu {
+  display: none;
   text-transform: uppercase;
-  float: left;
-  position: relative;
-}
-#TopBar nav a, #TopBar .Menu a {
-  color: #818386;
-  font-weight: bold;
-}
-#TopBar nav a:hover, #TopBar .Menu a:hover {
-  text-decoration: none;
-  color: #6e0000;
-}
-#TopBar nav li, #TopBar .Menu li {
-  position: relative;
-}
-#TopBar nav li ul, #TopBar .Menu li ul {
-  position: absolute;
-  z-index: 10;
-  margin: 0;
+  *zoom: 1;
+  width: 100%;
   background: #fff;
-  border: 1px solid #000;
-  top: 25px;
-  left: -9px;
+  border: 1px solid #6e0000;
+  border-top: none;
 }
-#TopBar nav li ul li, #TopBar .Menu li ul li {
+#ProductPushNavigation .Menu:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#ProductPushNavigation .Menu li {
+  float: left;
+}
+#ProductPushNavigation .Menu li a {
   display: block;
-  margin: 0;
-  text-align: left;
+  width: 160px;
+  padding: 40px 20px;
+  text-align: center;
 }
-#TopBar nav li ul li a, #TopBar .Menu li ul li a {
+#ProductPushNavigation .Menu li a img, #ProductPushNavigation .Menu li a span {
   display: block;
   color: #000;
-  padding: 10px 60px 10px 10px;
 }
-#TopBar nav li ul li a:hover, #TopBar .Menu li ul li a:hover {
-  background: #e4e4e4;
+#ProductPushNavigation .Menu li a img {
+  margin: 0 auto 20px auto;
+}
+#ProductPushNavigation .Menu li a span {
+  color: #000;
+  font-weight: bold;
+  font-size: 12px;
+}
+#ProductPushNavigation .Menu li a:hover {
+  text-decoration: none;
+  background: #e4e4e4 !important;
+}
+#ProductPushNavigation .Menu li a:hover span {
   color: #6e0000;
 }
 
@@ -679,6 +837,9 @@ mark {
 #Header .Menu {
   text-transform: uppercase;
 }
+#Header .Menu .WithChildren a:hover {
+  background: #971914 url(../images/arrow-down-headernav.png) 50% 80% no-repeat;
+}
 #Header .Menu li {
   float: left;
   margin: 0;
@@ -690,6 +851,7 @@ mark {
   color: #fff;
   padding: 10px 15px 25px 15px;
   font-size: 15px;
+  cursor: default;
 }
 #Header .Menu li a:hover {
   background: #971914;
@@ -702,7 +864,7 @@ mark {
   background: #fff;
   border: 1px solid #6e0000;
   border-top: none;
-  display: block;
+  z-index: 900;
 }
 #Header .Menu li ul li {
   float: left;
@@ -725,7 +887,7 @@ mark {
   font-size: 12px;
 }
 #Header .Menu li ul li a:hover {
-  background: #e4e4e4;
+  background: #e4e4e4 !important;
 }
 #Header .Menu li ul li a:hover span {
   color: #6e0000;

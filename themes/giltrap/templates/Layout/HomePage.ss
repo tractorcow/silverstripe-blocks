@@ -1,7 +1,9 @@
 <!-- Homepage hero section -->
 <div class="Container">
 	<div class="col grid triple">
-		<div class="Widget Span Double"></div>
+		<section id="HeroSlider" class="Widget Span Double">
+			<% include HeroSlider %>
+		</section>
 	</div>
 	<div class="col grid stacked">
 		<div class="Widget">
@@ -50,7 +52,7 @@
 		</div>
 	</div>
 	<div class="col grid double stacked">
-		<div class="Widget Span Double">
+		<div id="SecondarySlider" class="Widget Span Double">
 			<% include SecondarySlider %>
 		</div>
 	</div>

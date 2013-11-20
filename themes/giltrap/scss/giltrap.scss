@@ -8,8 +8,12 @@
 @import 'thirdparty/_html5.reset.scss';
 @import 'typography.scss';
 
+// Slider - cycle2
+@import 'plugins/_cycle2.scss';
+
 // Layout - Page
 @import 'layout/_layout.scss';
+@import 'layout/_topbar.scss';
 @import 'layout/_header.scss';
 @import 'layout/_footer.scss';
 @import 'layout/_content.scss';

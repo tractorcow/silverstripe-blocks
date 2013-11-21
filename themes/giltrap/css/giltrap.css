@@ -718,8 +718,14 @@ article:after {
   font-size: 14px;
   margin: 0 0 20px 0;
 }
-.ContentSection .ImageGrid .Image {
+.ContentSection .ImageGrid {
+  overflow: hidden;
+  height: 100%;
+}
+.ContentSection .ImageGrid * {
   display: block;
+}
+.ContentSection .ImageGrid .Image {
   float: left;
   margin-bottom: 10px;
 }
@@ -728,6 +734,13 @@ article:after {
 }
 .ContentSection .Size4 .first {
   margin-right: 10px;
+}
+.ContentSection .PersonBlock {
+  overflow: hidden;
+  padding: 25px;
+  width: 260px;
+  height: 420px;
+  background: #5a5b5e;
 }
 
 #TopBar {

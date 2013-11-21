@@ -39,6 +39,7 @@ article {
 }
 
 /* Block Modules */
+$blockHeight: 230px; 
 
 .Block {
 	$color: #fff;
@@ -110,8 +111,6 @@ article {
 
 /* HomePage */
 .HomePage {
-	$widgetHeight: 230px; 
-
 	#HeroSlider {
 
 		.cycle-overlay {
@@ -197,19 +196,19 @@ article {
 	}
 
 	.Widget {
-		height: $widgetHeight;
+		height: $blockHeight;
 		margin-bottom: $gridSpacing;
 		position: relative;
 		overflow: hidden;
 	}
 
 	.Widget.Stacked {
-		height: $widgetHeight + $gridSpacing;
+		height: $blockHeight + $gridSpacing;
 		margin-bottom: 0;
 	}
 
 	.Widget.Double {
-		height: rowSpan(2, $widgetHeight);
+		height: rowSpan(2, $blockHeight);
 	}
 
 	#Block1 .Widget, #Block1.Widget {
@@ -233,7 +232,6 @@ article {
 
 /* Expanded Content Page */
 .ContentSection{
-
 	margin-bottom: 60px;
 	
 	h2 { 
@@ -248,10 +246,16 @@ article {
 		margin: 0 0 20px 0;
 	}
 
-	.ImageGrid .Image {
-		display: block;
-		float: left;
-		margin-bottom: $gridSpacing;
+	.ImageGrid {
+		overflow: hidden;
+		height: 100%;
+
+		* { display: block; }
+
+		.Image {
+			float: left;
+			margin-bottom: $gridSpacing;
+		}
 	}
 
 	.Size3, .Size4 {
@@ -264,5 +268,14 @@ article {
 		.first {
 			margin-right: $gridSpacing;
 		}
+	}
+
+	.PersonBlock {
+		$padding: 25px;
+		overflow: hidden;
+		padding: $padding;
+		width: $gridSize - ($padding * 2);
+		height: ($blockHeight * 2) - ($padding * 2) + $gridSpacing;
+		background: $brandGrey;
 	}
 }

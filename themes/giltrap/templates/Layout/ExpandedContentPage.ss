@@ -28,7 +28,8 @@
 			</section>
 		<% end_if %>
 		<section class="col grid stacked">
-			<p>Sidebar</p>
+			<div class="PersonBlock">
+			</div>
 		</section>
 	</article>
 	<!-- end Content Section -->

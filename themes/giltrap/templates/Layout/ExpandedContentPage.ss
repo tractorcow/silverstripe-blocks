@@ -1,7 +1,4 @@
-<nav id="BreadCrumbs">
-	<p>Company / About</p>
-</nav>
-
+<% include BreadCrumbs %>
 <% loop Children %>
 	<!-- Content Section -->
 	<article class="ContentSection">

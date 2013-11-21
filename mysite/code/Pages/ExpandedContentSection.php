@@ -21,37 +21,37 @@ class ExpandedContentSection extends Page {
     );
 
   	// Match menu title to page name
-  	/*public function onAfterWrite(){
+  	public function onAfterWrite(){
   		parent::onAfterWrite();
   		$this->MenuTitle = $this->Title;
-  	}*/
+  	}
 
   public function getGridSize(){
     return $this->ContentImages()->Count();
   }
 
   public function getCMSFields(){
-     $fields = parent::getCMSFields();
+    $fields = parent::getCMSFields();
 
-     $dropdown = new DropdownField(
+    $dropdown = new DropdownField(
       'ImageAlign',
       'Image Alignment',
       singleton('ExpandedContentSection')->dbObject('ImageAlign')->enumValues()
-      );
+    );
 
-     $fields->addFieldToTab("Root.Main", $dropdown, 'Content');
-     $fields->addFieldToTab("Root.Images", new UploadField('ContentImages', 'Upload up to 4 images'));
+    $fields->addFieldToTab("Root.Main", $dropdown, 'Content');
+    $fields->addFieldToTab("Root.Images", new UploadField('ContentImages', 'Upload up to 4 images'));
 
-    	// Remove all the fields
-    	//$fields->removeFieldFromTab("Root.Main","URLSegment");
-    	//$fields->removeFieldFromTab("Root.Main","MenuTitle");
-     $fields->removeByName("WhatCanWeDoForYou");
-     $fields->removeByName("GoogleAnalytics");
-     $fields->removeByName("Metadata");
+    // Remove all the fields
+    $fields->removeFieldFromTab("Root.Main","URLSegment");
+    $fields->removeFieldFromTab("Root.Main","MenuTitle");
+    $fields->removeByName("WhatCanWeDoForYou");
+    $fields->removeByName("GoogleAnalytics");
+    $fields->removeByName("Metadata");
 
-     return $fields;
-   }
- }
+    return $fields;
+  }  
+}
 
 class ExpandedContentSection_Controller extends Page_Controller {	
 

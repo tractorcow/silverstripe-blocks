@@ -516,6 +516,9 @@ mark {
   margin: 30px 0 7px 0;
   font-weight: bold;
 }
+#BreadCrumbs a {
+  color: #000;
+}
 
 article {
   *zoom: 1;
@@ -708,8 +711,10 @@ article:after {
 .ContentSection {
   margin-bottom: 60px;
 }
-.ContentSection h2 {
+.ContentSection h1, .ContentSection h2 {
   text-transform: uppercase;
+}
+.ContentSection h1, .ContentSection h2 {
   font-size: 45px;
   margin: 0 0 35px 0;
 }
@@ -785,6 +790,7 @@ article:after {
   float: none;
   height: auto;
   padding: 0;
+  width: 217px;
 }
 #TopBar .Menu li ul a, #TopBar .Secondary li ul a {
   display: block;

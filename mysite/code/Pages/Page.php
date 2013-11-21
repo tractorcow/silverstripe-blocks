@@ -10,7 +10,8 @@
 class Page extends SiteTree {
 
 	private static $db = array (
-		'ShowInFooterNavigation' => 'Boolean'
+		'ShowInFooterNavigation' => 'Boolean',
+		'HideFromBreadcrumb' => 'Boolean'
 	);
 	
 	private static $many_many = array(
@@ -26,6 +27,7 @@ class Page extends SiteTree {
 	public function getSettingsFields() { 
       	$fields = parent::getSettingsFields(); 
         $fields->addFieldToTab("Root.Settings", new CheckBoxField('ShowInFooterNavigation', 'Show in footer?'), 'ShowInSearch');
+        $fields->addFieldToTab("Root.Settings", new CheckBoxField('HideFromBreadcrumb', 'Hide page name in breadcrumbs if current page'));
         return $fields;
     }
 

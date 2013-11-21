@@ -1,4 +1,5 @@
-<article class="Layout">
+<% include BreadCrumbs %>
+<article class="Layout ContentSection">
 	<h1>$Title.XML</h1>
 	<div class="Copy typography">
 		$Content

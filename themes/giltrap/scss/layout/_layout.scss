@@ -4,6 +4,17 @@
 	@include pie-clearfix;
 }
 
+#BreadCrumbs {
+	@include caps;
+	font-size: 16px;
+	margin: 30px 0 7px 0;
+	font-weight: bold;
+}
+
+article {
+	@include pie-clearfix;
+}
+
 .col {
 	float: left;
 }
@@ -16,6 +27,16 @@
 .grid.double 	{ width: gridSize(2); }
 .grid.triple 	{ width: gridSize(3); }
 .grid.stacked 	{ margin-right: 0; }
+
+.grid.rightspace {
+	padding-right: $gridSpacing;
+	width: $paddedWidth;
+}
+
+.grid.leftspace {
+	padding-left: $gridSpacing;
+	width: $paddedWidth;
+}
 
 /* Block Modules */
 
@@ -208,4 +229,40 @@
 		background: $brandRed;
 	}
 
+}
+
+/* Expanded Content Page */
+.ContentSection{
+
+	margin-bottom: 60px;
+	
+	h2 { 
+		@include caps;
+		font-size: 45px;
+		margin: 0 0 35px 0;
+	}
+
+	p {
+		font-family: Arial, sans-serif;
+		font-size: 14px;
+		margin: 0 0 20px 0;
+	}
+
+	.ImageGrid .Image {
+		display: block;
+		float: left;
+		margin-bottom: $gridSpacing;
+	}
+
+	.Size3, .Size4 {
+		.last {
+			margin-left: $gridSpacing;
+		}
+	}
+
+	.Size4 {
+		.first {
+			margin-right: $gridSpacing;
+		}
+	}
 }

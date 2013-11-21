@@ -1,5 +1,4 @@
 <!-- Homepage hero section -->
-<div class="Container">
 	<div class="col grid triple">
 		<section id="HeroSlider" class="Widget Span Double">
 			<% include HeroSlider %>

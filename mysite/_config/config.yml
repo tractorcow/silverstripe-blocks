@@ -14,3 +14,6 @@ Name: myextensions
 FormField:
   extensions:
     - FieldExtension
+Image:
+  extensions:
+    - ContentImageExtension

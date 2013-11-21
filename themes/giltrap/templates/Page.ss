@@ -14,7 +14,13 @@
 	</head>
 	<body class="$ClassName">
 		<% include Header %>
-		$Layout
+		<% if not HomePage %>
+		<div class="Container">
+		<% end_if %>
+			$Layout
+		<% if not HomePage %>
+		</div>
+		<% end_if %>
 		<% include Footer %>
 	</body>
 </html>

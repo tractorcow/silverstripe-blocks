@@ -3,6 +3,7 @@ $gridSize: 310px;
 $gridSpacing: 10px; // External spacing
 $mobileSpacing: 10px; // External spacing on mobile
 $cellPadding: 15px; // Internal padding
+$paddedWidth: $gridSize - $gridSpacing;
 
 @function gridSize($columns) {
 	@return $columns * ($gridSize + $gridSpacing) - $gridSpacing;

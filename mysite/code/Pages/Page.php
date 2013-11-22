@@ -13,6 +13,10 @@ class Page extends SiteTree {
 		'ShowInFooterNavigation' => 'Boolean',
 		'HideFromBreadcrumb' => 'Boolean'
 	);
+
+	private static $has_one = array (
+		'MainImage' => 'Image'
+	);
 	
 	private static $many_many = array(
 		'FooterModules' => 'FooterModule'
@@ -33,9 +37,11 @@ class Page extends SiteTree {
 
     public function getCMSFields(){
     	$fields = parent::getCMSFields();
+    	$fields->removeByName("GoogleAnalytics");
     	$config = GridFieldConfig_Custom::create();
     	$config->addSortable('SortOrder');
     	$gridField = new GridField('FooterModules', 'FooterModules', $this->FooterModules(null, 'SortOrder'), $config);
+    	$fields->addFieldToTab("Root.MainImage", new UploadField('MainImage'));
     	$fields->addFieldToTab("Root.WhatCanWeDoForYou", $gridField);
     	return $fields;
     }

@@ -374,7 +374,7 @@ $blockHeight: 230px;
 	}
 
 	.ContentSection {
-		margin: ($gridSpacing * 6) ($gridSpacing);
+		margin: ($gridSpacing * 6) 0;
 
 		h3 {
 			font-size: 36px;
@@ -385,10 +385,6 @@ $blockHeight: 230px;
 		.Abstract {
 			color: #818285;
 			font-size: 18px;
-		}
-
-		.margined {
-			margin-right: 40px;
 		}
 	}
 }

@@ -11,14 +11,29 @@ $(document).ready(function() {
 
 	/* Header Menu Dropdown Toggle */
 	var $headerMenu = $('#Header .Menu');
-	$headerMenu.find('.WithChildren').click( function(e){
+	
+	$('html').click(function() {
+		$headerMenu.find('ul ul:visible').slideUp(function(){
+			$headerMenu.find('.active').removeClass('active');
+		});
+	});
+
+	$headerMenu.click(function(e){
+	    e.stopPropagation();
+	});
+
+	$headerMenu.find('.WithChildren').click(function(e){
 		e.preventDefault();
-		/*var navString = '#'+$(this).data('ref');
-		var $navMenu = $(navString).parent('nav');
-		$navMenu.slideToggle('fast');*/
-		//$headerMenu.find('li ul').slideUp('fast');
-		var $subNav = $(this).find('ul');
-		$subNav.slideToggle('fast');
+		if($(this).hasClass('active')){
+			$(this).find('ul').slideUp();
+			$(this).removeClass('active');
+		}
+		else {
+			$headerMenu.find('.active ul').slideUp();
+			$headerMenu.find('.active').removeClass('active');
+			$(this).addClass('active');
+			$(this).find('ul').slideDown();
+		}
 	});
 
 	/* Tabs */

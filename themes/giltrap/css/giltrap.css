@@ -931,6 +931,39 @@ article:after {
   font-size: 18px;
 }
 
+.DealerListing h2 {
+  font-size: 22px;
+}
+.DealerListing .result {
+  *zoom: 1;
+  background: #e4e4e4;
+  padding: 40px 20px;
+}
+.DealerListing .result:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.DealerListing .result h3 {
+  font-size: 18px;
+  margin: 0 0 20px 0;
+}
+.DealerListing .result ul, .DealerListing .result li {
+  margin: 0;
+  padding: 0;
+}
+.DealerListing .result li {
+  float: left;
+  width: 33%;
+}
+.DealerListing .result p strong {
+  text-transform: uppercase;
+  width: 80px;
+}
+.DealerListing .alt {
+  background: #fff;
+}
+
 #TopBar {
   *zoom: 1;
   text-transform: uppercase;

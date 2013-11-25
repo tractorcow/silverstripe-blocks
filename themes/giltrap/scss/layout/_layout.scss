@@ -388,3 +388,40 @@ $blockHeight: 230px;
 		}
 	}
 }
+
+.DealerListing {
+
+	h2 {
+		font-size: 22px;
+	}
+
+	.result {
+		@include pie-clearfix;
+		background: $brandGreyLight1;
+		padding: 40px 20px;
+
+		h3 {
+			font-size: 18px;
+			margin: 0 0 20px 0;
+		}
+
+		ul, li {
+			margin: 0;
+			padding: 0;
+		}
+
+		li {
+			float: left;
+			width: 33%;
+		}
+
+		p strong {
+			@include caps;
+			width: 80px;
+		}
+	}
+
+	.alt {
+		background: #fff;
+	}
+}

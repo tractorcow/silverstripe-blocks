@@ -19,6 +19,7 @@
 		"simonwelsh/gridfieldrelationhandler": "dev-master",
         "silverstripe/widgets": "dev-master",
         "silverstripe/blog": "dev-master",
-		"simplepie/simplepie": "dev-master"
+		"simplepie/simplepie": "dev-master",
+		"ioti/silverstripe-blogcategories": "dev-master"
 	}
 }

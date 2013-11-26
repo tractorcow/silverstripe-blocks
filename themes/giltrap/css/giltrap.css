@@ -596,7 +596,7 @@ ul.tabs li.active {
 #BreadCrumbs {
   text-transform: uppercase;
   font-size: 16px;
-  margin: 30px 0 7px 0;
+  margin: 30px 0 7px 10px;
   font-weight: bold;
 }
 #BreadCrumbs a {
@@ -962,6 +962,44 @@ article:after {
 }
 .DealerListing .alt {
   background: #fff;
+}
+
+.blogSummary, .blogEntry {
+  padding: 20px 20px 20px 10px;
+  border-top: 1px solid #5a5b5e;
+}
+.blogSummary h2, .blogEntry h2 {
+  text-transform: uppercase;
+  font-size: 32px;
+  line-height: 1.1;
+  margin: 0 0 15px 0;
+}
+.blogSummary h2 a, .blogEntry h2 a {
+  color: #464748;
+}
+.blogSummary h2 a:hover, .blogEntry h2 a:hover {
+  text-decoration: none;
+}
+.blogSummary .authorDate, .blogEntry .authorDate {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.blogSummary .blogVitals, .blogEntry .blogVitals {
+  text-transform: uppercase;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.blogSummary .blogVitals a, .blogEntry .blogVitals a {
+  color: #6d6f72;
+}
+
+.blogSummary.first {
+  border: none;
+}
+
+.blogEntry {
+  border: none;
 }
 
 #TopBar {

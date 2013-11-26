@@ -10,6 +10,7 @@
 class OfficeAddress extends DataObject {
 	private static $db = array(
 		'Country' => 'Text',
+        'Region' => 'Text',
 		'Title' => 'Text',
 		'Address' => 'Text',
 		'MainOffice' => 'Boolean',

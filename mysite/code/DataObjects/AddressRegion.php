@@ -7,14 +7,12 @@
  *
  */
 
-class AdditionalContactInfo extends DataObject {
+class AddressRegion extends DataObject {
 	private static $db = array(
 		'Title' => 'Text',
-		'Description' => 'Text',
-		'IsEmail' => 'Boolean'
     );
 
     private static $has_one = array(
-  		"OfficeAddress" => "OfficeAddress"
+  		"AddressCountry" => "AddressCountry",
     );
 }

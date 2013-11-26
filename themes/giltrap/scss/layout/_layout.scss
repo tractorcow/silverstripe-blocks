@@ -7,7 +7,7 @@
 #BreadCrumbs {
 	@include caps;
 	font-size: 16px;
-	margin: 30px 0 7px 0;
+	margin: 30px 0 7px 10px;
 	font-weight: bold;
 
 	a {
@@ -424,4 +424,49 @@ $blockHeight: 230px;
 	.alt {
 		background: #fff;
 	}
+}
+
+.blogSummary, .blogEntry {
+
+	padding: 20px 20px 20px 10px;
+	border-top: 1px solid $brandGrey;
+
+	h2 {
+		@include caps;
+		font-size: 32px;
+		line-height: 1.1;
+		margin: 0 0 15px 0;
+
+		a {
+			color: #464748;
+		}
+
+		a:hover {
+			text-decoration: none;
+		}
+	}
+
+	.authorDate {
+		@include caps;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+
+	.blogVitals {
+		@include caps;
+		margin-top: 20px;
+		font-weight: bold;
+
+		a {
+			color: $brandGreyLight;
+		}
+	}
+}
+
+.blogSummary.first {
+	border: none;
+}
+
+.blogEntry {
+	border: none;
 }

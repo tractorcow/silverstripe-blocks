@@ -5,11 +5,9 @@
  * @package giltrap
  * @subpackage pages
  */
-class CaseStudyPage extends Page {
-	
+class CaseStudyPage extends RedirectToFirstChild {
 	private static $allowed_children = array("CaseStudy");
 }
 
-class CaseStudyPage_Controller extends Page_Controller {	
-	// Redirect to first child
+class CaseStudyPage_Controller extends RedirectToFirstChild_Controller {	
 }

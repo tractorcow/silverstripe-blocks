@@ -9,22 +9,21 @@
  *
  */
 
-class ExpandedContentSection extends Page {
+class SectionContent extends Page {
 
   private static $db = array(
     "ImageAlign" => "Enum(array('Left', 'Right'))"
-    );
-
+  );
 
   private static $many_many = array(
   	"ContentImages" => "Image"
-    );
+  );
 
   	// Match menu title to page name
-  	public function onAfterWrite(){
-  		parent::onAfterWrite();
-  		$this->MenuTitle = $this->Title;
-  	}
+  public function onAfterWrite(){
+    parent::onAfterWrite();
+    $this->MenuTitle = $this->Title;
+  }
 
   public function getGridSize(){
     return $this->ContentImages()->Count();
@@ -36,8 +35,8 @@ class ExpandedContentSection extends Page {
     $dropdown = new DropdownField(
       'ImageAlign',
       'Image Alignment',
-      singleton('ExpandedContentSection')->dbObject('ImageAlign')->enumValues()
-    );
+      singleton('SectionContent')->dbObject('ImageAlign')->enumValues()
+      );
 
     $fields->addFieldToTab("Root.Main", $dropdown, 'Content');
     $fields->addFieldToTab("Root.Images", new UploadField('ContentImages', 'Upload up to 4 images'));
@@ -48,12 +47,13 @@ class ExpandedContentSection extends Page {
     $fields->removeByName("WhatCanWeDoForYou");
     $fields->removeByName("GoogleAnalytics");
     $fields->removeByName("Metadata");
+    $fields->removeByName("MainImage");
 
     return $fields;
   }  
 }
 
-class ExpandedContentSection_Controller extends Page_Controller {	
+class SectionContent_Controller extends Page_Controller {	
 
   public function init() {
     parent::init();

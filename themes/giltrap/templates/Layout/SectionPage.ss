@@ -1,5 +1,5 @@
 <% include BreadCrumbs %>
-<% loop Children %>
+<% loop Sections %>
 	<!-- Content Section -->
 	<article class="ContentSection">
 		<h2>$Title</h2>
@@ -31,3 +31,27 @@
 	</article>
 	<!-- end Content Section -->
 <% end_loop %>
+<% if CaseStudies %>
+	<section>
+		Pagination
+	</section>
+	<% loop CaseStudies %>
+	<article class="ContentSection">
+		<h2>$Title</h2>
+		<section class="col grid rightspace">
+			$Content
+		</section>
+		<section class="col grid double">
+			<% loop MediaItems %>
+				<% if Image %>
+				$Image.CroppedImage(630, 470)
+				<% end_if %>
+			<% end_loop %>
+		</section>
+		<section class="col grid stacked">
+			<div class="PersonBlock">
+			</div>
+		</section>
+	</article>
+	<% end_loop %>
+<% end_if %>

@@ -9,8 +9,8 @@
 
 class OfficeAddress extends DataObject {
 	private static $db = array(
-		'Country' => 'Text',
-        'Region' => 'Text',
+		'Country' => 'Int',
+        'Region' => 'Int',
 		'Title' => 'Text',
 		'Address' => 'Text',
 		'MainOffice' => 'Boolean',
@@ -25,14 +25,20 @@ class OfficeAddress extends DataObject {
     );
 
     public function getCMSFields() {
-        //make a dropdown out of AddressCountry::get();
-        $fields = parent::getCMSFields();
-        $fields->removeByName('DealerListingID');
-        $fields->addFieldToTab('Root.Main', new TextField('Title'));
-        //$fields->addFieldToTab('Root.Main', new DropdownField('Country', 'Country', AddressCountry::get()));
-        $fields->addFieldToTab('Root.Main', new TextField('Region'));
-        $fields->addFieldToTab('Root.Main', new TextareaField('Address'));
-        $fields->addFieldToTab('Root.Main', new CheckboxField('MainOffice', 'This is the Main Office'));
+        $countries = AddressCountry::get()->map("ID", "Title");
+        $regions = AddressRegion::get()->filter(array('AddressCountryID' => $this->Country))->map("ID", "Title");
+
+        $fields = new FieldList();
+
+        $fields->push(new TextField('Title'));
+        $fields->push(new DropdownField('Country', 'Country', $countries));
+        
+        if($this->Country){            
+            $fields->push(new DropdownField('Region', 'Region', $regions));
+            $fields->push(new TextareaField('Address'));
+            $fields->push(new CheckboxField('MainOffice', 'This is the Main Office'));
+        }
+        
         return $fields;
     }
 }

@@ -727,6 +727,9 @@ article:after {
 .HomePage #HeroSlider .cycle-overlay .buttons .second {
   background: #97999c;
 }
+.HomePage #SecondarySlider {
+  background: #5a5b5e;
+}
 .HomePage #SecondarySlider .cycle-overlay {
   width: 50%;
   bottom: 0px;

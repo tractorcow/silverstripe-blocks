@@ -17,4 +17,11 @@ class AdditionalContactInfo extends DataObject {
     private static $has_one = array(
   		"OfficeAddress" => "OfficeAddress"
     );
+
+    public function getCMSFields() {
+    	return new FieldList(
+    		new TextField('Title'),
+    		new TextField('Description', 'Details')
+    	);
+    }
 }

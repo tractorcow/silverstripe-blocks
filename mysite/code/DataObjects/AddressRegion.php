@@ -15,4 +15,10 @@ class AddressRegion extends DataObject {
     private static $has_one = array(
   		"AddressCountry" => "AddressCountry",
     );
+
+    public function getCMSFields() {
+        return new FieldList(
+    		new TextField('Title')
+    	);
+    }
 }

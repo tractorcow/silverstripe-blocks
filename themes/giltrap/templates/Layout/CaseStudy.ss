@@ -61,4 +61,12 @@
 			<!-- .tab_container -->
 		</div>
 	</section>
+	<section>
+		<div class="col grid triple">
+			<h2>$Possessive Current Equipment</h2>
+		</div>
+		<div class="col grid stacked">
+			<h2>$Possessive Wishlist</h2>
+		</div>
+	</section>
 </article>

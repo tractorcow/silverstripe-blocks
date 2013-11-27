@@ -16,8 +16,10 @@ class FooterModule extends DataObject {
 		'Title' => 'Text',
 		'Description' => 'Text',
 		'LinkText' => 'Text',
-		'LinkURL' => 'Text'
+		'LinkURL' => 'Text',
     );
+
+    //private static $default_sort = '"SortOrder" ASC';
 
     private static $has_one = array(
     	'SiteTreeURL' => 'SiteTree'

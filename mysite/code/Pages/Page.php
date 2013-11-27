@@ -40,6 +40,7 @@ class Page extends SiteTree {
     	$fields->removeByName("GoogleAnalytics");
     	$config = GridFieldConfig_Custom::create();
     	$config->addSortable('SortOrder');
+    	$config->addRelationHandling();
     	$gridField = new GridField('FooterModules', 'FooterModules', $this->FooterModules(null, 'SortOrder'), $config);
     	$fields->addFieldToTab("Root.MainImage", new UploadField('MainImage'));
     	$fields->addFieldToTab("Root.WhatCanWeDoForYou", $gridField);

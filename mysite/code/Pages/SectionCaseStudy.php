@@ -21,6 +21,8 @@ class SectionCaseStudy extends SectionContent {
     	$fields->removeByName("ImageAlign");
 
     	$config = GridFieldConfig_Custom::create();
+        // What is the type name?
+        //$config->removeComponentByType();
     	$gridField = new GridField('MediaItems', 'MediaItems', $this->MediaItems(), $config);
     	$fields->addFieldToTab("Root.MediaGallery", $gridField);
     	

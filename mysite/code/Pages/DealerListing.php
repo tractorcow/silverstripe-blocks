@@ -12,8 +12,17 @@ class DealerListing extends Page {
   		"Dealers" => "Dealer",
     );
 
-    // Get Countries
-    // Needs to be saved somewhere - countries and regions, probably in a dataobject?
+    public function getCMSFields(){
+    	$fields = parent::getCMSFields();
+    	
+    	$config = GridFieldConfig_Custom::create();
+    	$gridField = new GridField('OfficeAddresses', 'OfficeAddresses', $this->OfficeAddresses(), $config);
+    	
+    	// #TODO: Is there a cleaner way to do
+    	$fields->insertBefore(new Tab('OfficeAddresses'), 'WhatCanWeDoForYou');
+    	$fields->addFieldToTab("Root.OfficeAddresses", $gridField);
+    	return $fields;
+    }
 }
 
 class DealerListing_Controller extends Page_Controller {	

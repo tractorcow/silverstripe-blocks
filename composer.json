@@ -20,7 +20,6 @@
         "silverstripe/widgets": "dev-master",
         "silverstripe/blog": "dev-master",
 		"simplepie/simplepie": "dev-master",
-		"ioti/silverstripe-blogcategories": "dev-master",
 		"silverstripe/userforms": "2.0.1"
 	}
 }

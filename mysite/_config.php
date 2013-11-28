@@ -7,7 +7,7 @@ global $database;
 $database = 'brr_giltrap';
 
 // Fulltext setup (if necessary)
-//FulltextSearchable::enable();
+FulltextSearchable::enable();
 
 // Set the site locale
 

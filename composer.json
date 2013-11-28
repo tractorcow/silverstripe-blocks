@@ -20,6 +20,7 @@
         "silverstripe/widgets": "dev-master",
         "silverstripe/blog": "dev-master",
 		"simplepie/simplepie": "dev-master",
-		"silverstripe/userforms": "2.0.1"
+		"silverstripe/userforms": "2.0.1",
+		"unclecheese/betterbuttons": "dev-master"
 	}
 }

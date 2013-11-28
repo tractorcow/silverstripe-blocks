@@ -603,10 +603,10 @@ ul.tabs li.active {
   color: #000;
 }
 
-article {
+article, .row {
   *zoom: 1;
 }
-article:after {
+article:after, .row:after {
   content: "";
   display: table;
   clear: both;
@@ -934,9 +934,13 @@ article:after {
   font-size: 18px;
 }
 
-.DealerListing h2 {
+.SectionSearch h2 {
   font-size: 22px;
 }
+.SectionSearch .intro p {
+  font-size: 20px;
+}
+
 .DealerListing .result {
   *zoom: 1;
   background: #e4e4e4;
@@ -1003,6 +1007,23 @@ article:after {
 
 .blogEntry {
   border: none;
+}
+
+/* Manual Search */
+.results .col {
+  background: #ccc;
+  margin-top: 0;
+}
+
+.results {
+  background: #efefef;
+  margin: 0 0 20px 0;
+}
+
+#SectionSearch {
+  background: #666;
+  height: 100px;
+  margin: 0 0 60px 0;
 }
 
 #TopBar {
@@ -1151,7 +1172,7 @@ article:after {
 }
 #Header .Logo {
   display: block;
-  margin: 20px 0;
+  margin: 20px 0 20px 10px;
   width: 320px;
 }
 #Header .Menu, #Header .Search {

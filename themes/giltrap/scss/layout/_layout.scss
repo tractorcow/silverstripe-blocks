@@ -15,7 +15,7 @@
 	}
 }
 
-article {
+article, .row {
 	@include pie-clearfix;
 }
 
@@ -391,11 +391,18 @@ $blockHeight: 230px;
 	}
 }
 
-.DealerListing {
+.SectionSearch {
 
 	h2 {
 		font-size: 22px;
 	}
+
+	.intro p {
+		font-size: 20px;
+	}
+}
+
+.DealerListing {
 
 	.result {
 		@include pie-clearfix;
@@ -471,4 +478,21 @@ $blockHeight: 230px;
 
 .blogEntry {
 	border: none;
+}
+
+/* Manual Search */
+.results .col {
+	background: #ccc;
+	margin-top: 0;
+}
+
+.results {
+	background: #efefef;
+	margin: 0 0 20px 0;
+}
+
+#SectionSearch {
+	background: #666;
+	height: 100px;
+	margin: 0 0 60px 0;
 }

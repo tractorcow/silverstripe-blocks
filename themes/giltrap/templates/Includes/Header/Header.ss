@@ -6,7 +6,7 @@
 		</div>
 		<% include ProductNavigation %>	
 		<div class="Search">
-			Search Box
+			$SearchForm
 		</div>
 	</div>
 </header>

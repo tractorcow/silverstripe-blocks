@@ -1,9 +1,13 @@
 <% include BreadCrumbs %>
-<article class="Layout ContentSection">
+<article class="Layout ContentSection SectionSearch">
 	<div class="col grid triple">
 		<h1>$Title.XML</h1>
 		<div class="intro grid double">$Content</div>
 
+		<! -- Search form -->
+		<div id="SectionSearch">
+		</div>
+		
 		<!-- Search results -->
 		<h2>Dealer Location Results</h2>
 		<div class="result">

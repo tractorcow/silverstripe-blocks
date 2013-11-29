@@ -702,6 +702,20 @@ article:after, .row:after {
 .ProductListing {
   text-transform: uppercase;
   text-align: center;
+  	/* li ul {
+  		display: none;
+  		position: absolute;
+  		width: 230px;
+  	}
+  
+  	li li {
+  		margin: 2px 0;
+  	}
+  
+  	li li a {
+  		background: #efefef;
+  		display: block;
+  	} */
 }
 .ProductListing ul, .ProductListing li {
   margin: 0;
@@ -716,18 +730,6 @@ article:after, .row:after {
   float: left;
   width: 230px;
   margin-right: 20px;
-  display: block;
-}
-.ProductListing li ul {
-  display: none;
-  position: absolute;
-  width: 230px;
-}
-.ProductListing li li {
-  margin: 2px 0;
-}
-.ProductListing li li a {
-  background: #efefef;
   display: block;
 }
 .ProductListing h2 {
@@ -1249,10 +1251,6 @@ article:after, .row:after {
 }
 #Header .Menu #ProductMenu a:hover, #Header .Menu #ProductMenu .active {
   background: #971914 url(../images/arrow-down-headernav.png) 50% 80% no-repeat;
-}
-#Header .Menu #ProductMenu .dropit-open a {
-  background: #fff;
-  color: #000 !important;
 }
 #Header .Menu li {
   float: left;

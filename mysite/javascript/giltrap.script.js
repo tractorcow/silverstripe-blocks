@@ -10,8 +10,8 @@ $(document).ready(function() {
 	});
 
 	/* Header Menu Dropdown Toggle */
-	$('#ProductMenu').dropit();
-	/*var $headerMenu = $('#Header .Menu');
+	//$('#ProductMenu').dropit();
+	var $headerMenu = $('#Header .Menu');
 	
 	$('html').click(function() {
 		$headerMenu.find('ul ul:visible').slideUp(function(){
@@ -19,12 +19,13 @@ $(document).ready(function() {
 		});
 	});
 
-	$headerMenu.click(function(e){
+	$(".MenuItem ul li a", $headerMenu).click(function(e){
 	    e.stopPropagation();
 	});
 
 	$headerMenu.find('.WithChildren').on('click',function(e){
 		e.preventDefault();
+	    e.stopPropagation();
 		if($(this).hasClass('active')){
 			$(this).find('ul').slideUp();
 			$(this).removeClass('active');
@@ -35,7 +36,7 @@ $(document).ready(function() {
 			$(this).addClass('active');
 			$(this).find('ul').slideDown();
 		}
-	});*/
+	});
 
 	/* Product Listing Menus inside Landing Pages */
 	$(".range a").click(function(e){

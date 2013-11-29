@@ -116,6 +116,71 @@ $blockHeight: 230px;
 	}
 }
 
+.ProductListing {
+	@include caps;
+	text-align: center;
+
+	ul, li { margin: 0; padding: 0; list-style: none; }
+	.main { margin: 60px 0; overflow: auto; }
+
+	li { 
+		float: left;
+		width: 230px;
+		margin-right: 20px;
+		display: block;
+	}
+
+	li ul {
+		display: none;
+		position: absolute;
+		width: 230px;
+	}
+
+	li li {
+		margin: 2px 0;
+	}
+
+	li li a {
+		background: #efefef;
+		display: block;
+	}
+
+	h2 {
+		margin: 10px 0 5px 0;
+	}
+
+	img {
+		display: block;
+		margin: 0 auto $gridSpacing * 2 auto;
+	}
+
+	p {
+		margin: 10px 0 0 0;
+	}
+
+	p a {
+		color: $brandGrey;
+		@include caps;
+		font-size: 16px;
+	}
+
+	.button a {
+		background: $brandGreyRollover;
+		@include caps;
+		display: block;
+		padding: $gridSpacing;
+		color: #000;
+		margin: 0 auto;
+		font-weight: bold;
+		font-size: 14px;
+	}
+
+	.range a {
+		background: #444;
+		color: #fff;
+	}
+}
+
 /* HomePage */
 .HomePage {
 	#HeroSlider {

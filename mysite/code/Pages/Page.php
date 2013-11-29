@@ -68,6 +68,7 @@ class Page_Controller extends ContentController {
 		Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.min.js');
 		Requirements::javascript('mysite/javascript/jquery.cycle2.min.js');
 		Requirements::javascript('mysite/javascript/jquery.easyResponsiveTabs.js');
+		Requirements::javascript('mysite/javascript/jquery.dropit.js');
 		Requirements::javascript('mysite/javascript/giltrap.script.js');
 		// Please use Requirements::combine_files() where possible
 	}

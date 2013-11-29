@@ -10,7 +10,8 @@ $(document).ready(function() {
 	});
 
 	/* Header Menu Dropdown Toggle */
-	var $headerMenu = $('#Header .Menu');
+	$('#ProductMenu').dropit();
+	/*var $headerMenu = $('#Header .Menu');
 	
 	$('html').click(function() {
 		$headerMenu.find('ul ul:visible').slideUp(function(){
@@ -22,7 +23,7 @@ $(document).ready(function() {
 	    e.stopPropagation();
 	});
 
-	$headerMenu.find('.WithChildren').click(function(e){
+	$headerMenu.find('.WithChildren').on('click',function(e){
 		e.preventDefault();
 		if($(this).hasClass('active')){
 			$(this).find('ul').slideUp();
@@ -34,6 +35,12 @@ $(document).ready(function() {
 			$(this).addClass('active');
 			$(this).find('ul').slideDown();
 		}
+	});*/
+
+	/* Product Listing Menus inside Landing Pages */
+	$(".range a").click(function(e){
+		e.preventDefault();
+		$(this).parents().siblings('ul').toggle();
 	});
 
 	/* Tabs */

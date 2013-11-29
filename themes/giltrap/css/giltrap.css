@@ -699,6 +699,67 @@ article:after, .row:after {
   font-weight: bold;
 }
 
+.ProductListing {
+  text-transform: uppercase;
+  text-align: center;
+}
+.ProductListing ul, .ProductListing li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ProductListing .main {
+  margin: 60px 0;
+  overflow: auto;
+}
+.ProductListing li {
+  float: left;
+  width: 230px;
+  margin-right: 20px;
+  display: block;
+}
+.ProductListing li ul {
+  display: none;
+  position: absolute;
+  width: 230px;
+}
+.ProductListing li li {
+  margin: 2px 0;
+}
+.ProductListing li li a {
+  background: #efefef;
+  display: block;
+}
+.ProductListing h2 {
+  margin: 10px 0 5px 0;
+}
+.ProductListing img {
+  display: block;
+  margin: 0 auto 20px auto;
+}
+.ProductListing p {
+  margin: 10px 0 0 0;
+}
+.ProductListing p a {
+  color: #5a5b5e;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.ProductListing .button a {
+  background: #e4e4e4;
+  text-transform: uppercase;
+  display: block;
+  padding: 10px;
+  color: #000;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 14px;
+}
+.ProductListing .range a {
+  background: #444;
+  color: #fff;
+}
+
 /* HomePage */
 .HomePage #HeroSlider .cycle-overlay {
   width: 515px;
@@ -1186,8 +1247,12 @@ article:after, .row:after {
 #Header .Menu {
   text-transform: uppercase;
 }
-#Header .Menu .WithChildren a:hover {
+#Header .Menu #ProductMenu a:hover, #Header .Menu #ProductMenu .active {
   background: #971914 url(../images/arrow-down-headernav.png) 50% 80% no-repeat;
+}
+#Header .Menu #ProductMenu .dropit-open a {
+  background: #fff;
+  color: #000 !important;
 }
 #Header .Menu li {
   float: left;
@@ -1217,6 +1282,8 @@ article:after, .row:after {
 }
 #Header .Menu li ul li {
   float: left;
+  overflow: hidden;
+  height: 215px;
 }
 #Header .Menu li ul li a {
   width: 160px;
@@ -1230,15 +1297,19 @@ article:after, .row:after {
 #Header .Menu li ul li a img {
   margin: 0 auto 20px auto;
 }
-#Header .Menu li ul li a span {
+#Header .Menu li ul li a strong {
   color: #000;
   font-weight: bold;
+  font-size: 14px;
+}
+#Header .Menu li ul li a span {
+  color: #555;
   font-size: 12px;
 }
 #Header .Menu li ul li a:hover {
   background: #e4e4e4 !important;
 }
-#Header .Menu li ul li a:hover span {
+#Header .Menu li ul li a:hover strong, #Header .Menu li ul li a:hover span {
   color: #6e0000;
 }
 @media screen and (max-width: 959px) {

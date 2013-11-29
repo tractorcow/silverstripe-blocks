@@ -14,11 +14,11 @@
 	</head>
 	<body class="$ClassName">
 		<% include Header %>
-		<% if not HomePage %>
+		<% if ClassName = HomePage %>
+		$Layout
+		<% else %>
 		<div class="Container">
-		<% end_if %>
 			$Layout
-		<% if not HomePage %>
 		</div>
 		<% end_if %>
 		<% include Footer %>

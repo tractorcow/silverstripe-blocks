@@ -8,6 +8,9 @@
  */
 
 class ImageBlock extends TextBlock {
+
+    private static $singular_name = 'Image Block';
+    private static $plural_name = 'Image Blocks';
 	
 	private static $db = array(
 		'LinkText' => 'Text',
@@ -22,13 +25,10 @@ class ImageBlock extends TextBlock {
     );
 
 	public function getCMSFields() {
-		return new FieldList(
-        	new TextField('Title'),
-            new UploadField('Image'),
-            new HeaderField('Optional', 'Optional Fields'),
-            new TextAreaField('Content'),
-            new TextField('LinkText'),
-            new TreeDropdownField("SiteTreeURLID", "Choose a page to which to link", "SiteTree")
-    	);
+        $fields = parent::getCMSFields();
+        $fields->removeByName('Image');
+        $fields->addFieldToTab('Root.Main', new UploadField('Image'), 'Content');
+        $fields->addFieldToTab('Root.Main', new HeaderField('Optional','Optional Fields'), 'Content');
+        return $fields;
 	}
 }

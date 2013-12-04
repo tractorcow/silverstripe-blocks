@@ -8,6 +8,9 @@
  */
 
 class TextBlock extends ContentBlock {
+
+    private static $singular_name = 'Text Block';
+    private static $plural_name = 'Text Blocks';
 	
 	private static $db = array(
 		'LinkText' => 'Text',
@@ -21,11 +24,12 @@ class TextBlock extends ContentBlock {
     );
 
 	public function getCMSFields() {
-		return new FieldList(
-        	new TextField('Title'),
-        	new TextAreaField('Content'),
-        	new TextField('LinkText'),
-        	new TreeDropdownField("SiteTreeURLID", "Choose a page to which to link", "SiteTree")
-    	);
+        $fields = parent::getCMSFields();
+        $fields->removeByName('Content');
+        $fields->removeByName('LinkText');
+        $fields->removeByName('LinkURL');
+        $fields->addFieldToTab('Root.Main', new TextAreaField('Content'), 'SiteTreeURLID');
+        $fields->addFieldToTab('Root.Main', new TextField('LinkText'), 'SiteTreeURLID');
+        return $fields;
 	}
 }

@@ -7,14 +7,6 @@
  */
 class HomePage extends Page {
 
-	// Teaser box locations for this page's template
-	private $teaser_locations = array(
-		'Hero Teaser', 
-		'Teaser with Image', 
-		'Bottom Teaser 1',
-		'Bottom Teaser 2'
-	);
-
 	// BottomSlider is just a futureproofing element in case they want to use sections other than
 	// case studies in the future
 	private static $has_one = array(
@@ -22,19 +14,37 @@ class HomePage extends Page {
 	);
 
 	private static $many_many = array(
-		'TeaserBox' => 'TeaserBox',
+		'FeaturedProducts' => 'FeaturedProduct',
 	);
 
 	private static $has_many = array(
 		'HeroSlides' => 'HeroSlide'
 	);
 
+	private static $many_many_extraFields = array(
+		'FeaturedProducts' => array(
+			'SortOrder' => 'Int'
+		)
+	);
+
 	public function getCMSFields(){
     	$fields = parent::getCMSFields();
     	$config = GridFieldConfig_Custom::create();
     	$fields->removeByName("MainImage");
+
+    	// Hero Slides
+    	$fields->insertBefore(new Tab('HeroSlides'), 'WhatCanWeDoForYou');
     	$gridField = new GridField('HeroSlides', 'HeroSlides', $this->HeroSlides(), $config);
     	$fields->addFieldToTab("Root.HeroSlides", $gridField);
+
+    	// Featured Products
+    	$config = GridFieldConfig_Custom::create();
+    	$config->addSortable('SortOrder');
+    	$config->addRelationHandling();
+    	$fields->insertBefore(new Tab('FeaturedProducts'), 'WhatCanWeDoForYou');
+    	$gridField = new GridField('FeaturedProducts', 'FeaturedProducts', $this->FeaturedProducts(null, 'SortOrder'), $config);
+    	$fields->addFieldToTab("Root.FeaturedProducts", $gridField);
+
     	return $fields;
     }
 

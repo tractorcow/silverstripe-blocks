@@ -14,10 +14,10 @@ class GridFieldConfig_BlockManager extends GridFieldConfig{
 			'singular_name' => array('title' => 'Block Type', 'field' => 'ReadonlyField'),
 			'Title'        	=> array('title' => 'Title', 'field' => 'ReadonlyField'),
 			'AreaNice' 		=> array('title' => 'Block Area', 'field' => 'ReadonlyField'),
-			'InheritedFrom' => array('title' => 'Inherited From', 'field' => 'ReadonlyField'),
+			//'InheritedFrom' => array('title' => 'Inherited From', 'field' => 'ReadonlyField'),
 			'Weight'    	=> array('title' => 'Weight', 'field' => 'NumericField'),
 			//'PagesCount'  	=> array('title' => 'Number of Pages', 'field' => 'ReadonlyField'),
-			'Published' 	=> array('title' => 'Published (global)', 'field' => 'CheckboxField'),
+			//'Published' 	=> array('title' => 'Published (global)', 'field' => 'CheckboxField'),
 			//'PublishedOnThisPage' => array('title' => 'Published (just for this page)', 'callback' => $this->getPublishedOnThisPageField()),
 		));
 

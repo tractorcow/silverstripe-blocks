@@ -1,18 +1,4 @@
 @font-face {
-  font-family: "Gotham";
-  src: url('../fonts/Gotham/Light/Gotham-Light.eot');
-  src: url('../fonts/Gotham/Light/Gotham-Light.eot?#iefix') format('eot'), url('../fonts/Gotham/Light/Gotham-Light.woff') format('woff'), url('../fonts/Gotham/Light/Gotham-Light.ttf') format('truetype'), url('../fonts/Gotham/Light/Gotham-Light.svg') format('svg');
-  font-weight: Normal;
-}
-
-@font-face {
-  font-family: "Gotham";
-  src: url('../fonts/Gotham/Book/Gotham-Book.eot');
-  src: url('../fonts/Gotham/Book/Gotham-Book.eot?#iefix') format('eot'), url('../fonts/Gotham/Book/Gotham-Book.woff') format('woff'), url('../fonts/Gotham/Book/Gotham-Book.ttf') format('truetype'), url('../fonts/Gotham/Book/Gotham-Book.svg') format('svg');
-  font-weight: Bold;
-}
-
-@font-face {
   font-family: "GothamLight";
   src: url('../fonts/Gotham/Light/Gotham-Light.eot');
   src: url('../fonts/Gotham/Light/Gotham-Light.eot?#iefix') format('eot'), url('../fonts/Gotham/Light/Gotham-Light.woff') format('woff'), url('../fonts/Gotham/Light/Gotham-Light.ttf') format('truetype'), url('../fonts/Gotham/Light/Gotham-Light.svg') format('svg');
@@ -289,11 +275,11 @@ mark {
 /* Media queries!
 -------------------------------------------------------------------------------*/
 /* Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
-.fontNormal {
+.fontNormal, .DefaultTypography, .typography > *, body {
   font-family: Arial, sans-serif;
 }
 
-.fontGotham, .DefaultTypography, .typography > *, body {
+.fontGotham {
   font-family: Gotham, Arial, sans-serif;
 }
 
@@ -301,7 +287,7 @@ mark {
   font-family: GothamLight, Arial, sans-serif;
 }
 
-.fontGothamBook {
+.fontGothamBook, .Block h3, #TopBar .Menu, #TopBar .Secondary, #Header .Menu, #FooterModules h4, #Footer .Bar {
   font-family: GothamBook, Arial, sans-serif;
 }
 
@@ -595,6 +581,7 @@ ul.tabs li.active {
 
 #BreadCrumbs {
   text-transform: uppercase;
+  line-height: 1;
   font-size: 16px;
   margin: 30px 0 7px 0;
   font-weight: bold;
@@ -648,6 +635,19 @@ article:after, .row:after {
   display: block;
 }
 
+.SectionWidget h2 {
+  text-transform: uppercase;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  padding: 5px 10px;
+  background: #97999c;
+  color: #fff;
+  font-weight: normal;
+  font-size: 12px;
+}
+
 .Block * {
   text-transform: uppercase;
   color: white;
@@ -656,9 +656,11 @@ article:after, .row:after {
   font-size: 22px;
   line-height: 1.4;
   margin: 20px;
+  font-weight: normal;
 }
 .Block p {
   margin: 20px;
+  font-size: 13px;
 }
 .Block .button {
   text-transform: uppercase;
@@ -813,7 +815,7 @@ article:after, .row:after {
   font-size: 14px;
 }
 .HomePage .ProductListing {
-  margin: 40px auto;
+  margin: 10px auto;
   text-align: center;
 }
 .HomePage .ProductListing img {
@@ -1099,13 +1101,14 @@ article:after, .row:after {
   clear: both;
 }
 #TopBar .Menu, #TopBar .Secondary {
-  height: 35px;
+  height: 30px;
   font-size: 12px;
 }
 #TopBar .Menu a, #TopBar .Secondary a {
+  font-weight: bold;
+  letter-spacing: -1px;
   color: #5a5b5e;
   display: inline;
-  padding: 0 15px;
 }
 #TopBar .Menu a:hover, #TopBar .Secondary a:hover {
   color: #6e0000;
@@ -1114,9 +1117,10 @@ article:after, .row:after {
 #TopBar .Menu li, #TopBar .Secondary li {
   float: left;
   display: block;
-  height: 23px;
-  padding-top: 12px;
+  height: 21px;
+  padding-top: 9px;
   position: relative;
+  margin-right: 30px;
 }
 #TopBar .Menu li ul, #TopBar .Secondary li ul {
   position: absolute;
@@ -1125,7 +1129,7 @@ article:after, .row:after {
   z-index: 1000;
   margin: 0;
   padding: 0;
-  top: 35px;
+  top: 30px;
 }
 #TopBar .Menu li ul li, #TopBar .Secondary li ul li {
   float: none;
@@ -1135,15 +1139,15 @@ article:after, .row:after {
 }
 #TopBar .Menu li ul a, #TopBar .Secondary li ul a {
   display: block;
-  padding: 7.5px 15px;
-  padding-right: 60px;
+  padding: 15px 30px;
+  padding-right: 120px;
 }
 #TopBar .Menu li ul a:hover, #TopBar .Secondary li ul a:hover {
   background: #e4e4e4;
 }
 #TopBar .Menu {
   float: left;
-  margin-left: 320px;
+  margin-left: 291.4px;
 }
 #TopBar .Secondary {
   float: right;
@@ -1160,52 +1164,10 @@ article:after, .row:after {
   display: none;
 }
 
-#ProductPushNavigation .Menu {
-  display: none;
-  text-transform: uppercase;
-  *zoom: 1;
-  width: 100%;
-  background: #fff;
-  border: 1px solid #6e0000;
-  border-top: none;
-}
-#ProductPushNavigation .Menu:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-#ProductPushNavigation .Menu li {
-  float: left;
-}
-#ProductPushNavigation .Menu li a {
-  display: block;
-  width: 160px;
-  padding: 40px 20px;
-  text-align: center;
-}
-#ProductPushNavigation .Menu li a img, #ProductPushNavigation .Menu li a span {
-  display: block;
-  color: #000;
-}
-#ProductPushNavigation .Menu li a img {
-  margin: 0 auto 20px auto;
-}
-#ProductPushNavigation .Menu li a span {
-  color: #000;
-  font-weight: bold;
-  font-size: 12px;
-}
-#ProductPushNavigation .Menu li a:hover {
-  text-decoration: none;
-  background: #e4e4e4 !important;
-}
-#ProductPushNavigation .Menu li a:hover span {
-  color: #6e0000;
-}
-
 #Header {
   position: relative;
   background: #6e0000;
+  margin-bottom: 20px;
   *zoom: 1;
 }
 #Header:after {
@@ -1236,7 +1198,7 @@ article:after, .row:after {
 #Header .Logo {
   display: block;
   margin: 20px 0 20px 10px;
-  width: 320px;
+  width: 281.4px;
 }
 #Header .Menu, #Header .Search {
   margin-top: 45px;
@@ -1320,8 +1282,8 @@ article:after, .row:after {
 }
 
 #FooterModules {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 #FooterModules h3 {
   text-transform: uppercase;
@@ -1344,7 +1306,7 @@ article:after, .row:after {
 #FooterModules p a {
   text-transform: uppercase;
   color: #464748;
-  font-weight: bold;
+  font-size: 13px;
 }
 
 #Footer {

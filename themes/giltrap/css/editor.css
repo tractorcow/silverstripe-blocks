@@ -2,20 +2,6 @@
  * This support file is used to style the WYSIWYG editor in the CMS
  */
 @font-face {
-  font-family: "Gotham";
-  src: url('../fonts/Gotham/Light/Gotham-Light.eot');
-  src: url('../fonts/Gotham/Light/Gotham-Light.eot?#iefix') format('eot'), url('../fonts/Gotham/Light/Gotham-Light.woff') format('woff'), url('../fonts/Gotham/Light/Gotham-Light.ttf') format('truetype'), url('../fonts/Gotham/Light/Gotham-Light.svg') format('svg');
-  font-weight: Normal;
-}
-
-@font-face {
-  font-family: "Gotham";
-  src: url('../fonts/Gotham/Book/Gotham-Book.eot');
-  src: url('../fonts/Gotham/Book/Gotham-Book.eot?#iefix') format('eot'), url('../fonts/Gotham/Book/Gotham-Book.woff') format('woff'), url('../fonts/Gotham/Book/Gotham-Book.ttf') format('truetype'), url('../fonts/Gotham/Book/Gotham-Book.svg') format('svg');
-  font-weight: Bold;
-}
-
-@font-face {
   font-family: "GothamLight";
   src: url('../fonts/Gotham/Light/Gotham-Light.eot');
   src: url('../fonts/Gotham/Light/Gotham-Light.eot?#iefix') format('eot'), url('../fonts/Gotham/Light/Gotham-Light.woff') format('woff'), url('../fonts/Gotham/Light/Gotham-Light.ttf') format('truetype'), url('../fonts/Gotham/Light/Gotham-Light.svg') format('svg');
@@ -29,11 +15,11 @@
   font-weight: Normal;
 }
 
-.fontNormal {
+.fontNormal, .DefaultTypography, .typography > *, .typography {
   font-family: Arial, sans-serif;
 }
 
-.fontGotham, .DefaultTypography, .typography > *, .typography {
+.fontGotham {
   font-family: Gotham, Arial, sans-serif;
 }
 

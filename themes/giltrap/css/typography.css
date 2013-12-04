@@ -1,8 +1,8 @@
-.fontNormal {
+.fontNormal, .DefaultTypography, .typography > * {
   font-family: Arial, sans-serif;
 }
 
-.fontGotham, .DefaultTypography, .typography > * {
+.fontGotham {
   font-family: Gotham, Arial, sans-serif;
 }
 

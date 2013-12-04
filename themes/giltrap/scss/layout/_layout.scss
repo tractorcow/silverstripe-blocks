@@ -6,6 +6,7 @@
 
 #BreadCrumbs {
 	@include caps;
+	line-height: 1;
 	font-size: 16px;
 	margin: 30px 0 7px 0;
 	font-weight: bold;
@@ -48,6 +49,19 @@ $blockHeight: 230px;
 	display: block; 
 }
 
+.SectionWidget h2 {
+	@include caps;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	padding: 5px 10px;
+	background: #97999c;
+	color: #fff;
+	font-weight: normal;
+	font-size: 12px;
+}
+
 .Block {
 	$color: #fff;
 	$margin: $gridSpacing * 2;
@@ -58,13 +72,16 @@ $blockHeight: 230px;
 	}
 
 	h3 {
+		@extend .fontGothamBook;
 		font-size: 22px;
 		line-height: 1.4;
 		margin: $margin;
+		font-weight: normal;
 	}
 
 	p { 
 		margin: $margin;
+		font-size: 13px;
 	}
 
 	.button {
@@ -247,7 +264,7 @@ $blockHeight: 230px;
 
 	.ProductListing {
 		$imageWidth: 200px;
-		margin: ($gridSpacing * 4) auto;
+		margin: $gridSpacing auto;
 
 		text-align: center;
 

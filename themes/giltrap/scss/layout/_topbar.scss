@@ -2,19 +2,20 @@
 	@include pie-clearfix;
 	@include caps;
 
-	$navSpacing: 15px;
-	$menuHeight: 35px;
-	$topPadding: 12px;
+	$topPadding: 9px;
 	$fontSize: 12px;
 
 	.Menu, .Secondary {
 		height: $menuHeight;
 		font-size: $fontSize;
 
+		@extend .fontGothamBook;
+
 		a {
+			font-weight: bold;
+			letter-spacing: -1px;
 			color: $brandGrey;
 			display: inline;
-			padding: 0 $navSpacing;
 		}
 
 		a:hover {
@@ -28,6 +29,7 @@
 			height: $menuHeight - $topPadding;
 			padding-top: $topPadding;
 			position: relative;
+			margin-right: $navSpacing;
 
 			ul {
 				position: absolute;
@@ -60,7 +62,7 @@
 
 	.Menu {
 		float: left;
-		margin-left: $gridSize + $gridSpacing;
+		margin-left: $menuOffset;
 	}
 
 	.Secondary {

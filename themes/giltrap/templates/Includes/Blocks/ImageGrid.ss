@@ -12,7 +12,7 @@
 			<% else_if Top.GridSize = 2 %>
 				$CroppedImage(630, 230)
 			<% else %>
-				$CroppedImage(630, 630)
+				$CroppedImage(630, 470)
 			<% end_if %>
 		</div>
 	<% end_loop %>

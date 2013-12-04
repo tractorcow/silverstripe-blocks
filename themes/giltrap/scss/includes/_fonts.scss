@@ -8,8 +8,8 @@
 	@include font-face($alias, font-files($woff, $ttf, $svg), $eot, #{$as});
 }
 
-@include make-font("Gotham", "Gotham", 'Light', 'Normal');
-@include make-font("Gotham", "Gotham", 'Book', 'Bold');
+//@include make-font("Gotham", "Gotham", 'Light', 'Normal');
+//@include make-font("Gotham", "Gotham", 'Book', 'Bold');
 @include make-font("Gotham", "GothamLight", 'Light', 'Normal');
 @include make-font("Gotham", "GothamBook", 'Book', 'Normal');
 

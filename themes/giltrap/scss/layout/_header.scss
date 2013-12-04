@@ -1,63 +1,13 @@
 // Hide subnavigation
 .Menu .WithChildren ul { display: none;}
 
-#ProductPushNavigation{
-	$topbottom: $gridSpacing * 2;
-	$pictureNavWidth: 140px + $topbottom;
-	
-	.Menu {
-		display: none;
-		@include caps;
-		@include pie_clearfix;
-
-		width: 100%;
-		background: #fff;
-		border: 1px solid $brandRed;
-		border-top: none;
-
-		li {
-			float: left;
-
-			a {
-				display: block;
-				width: $pictureNavWidth;
-				padding: ($gridSpacing*4) ($gridSpacing*2);
-				text-align: center;
-
-				img, span {
-					display: block;
-					color: #000;
-				}
-
-				img {
-					margin: 0 auto $gridSpacing*2 auto; 
-				}
-
-				span {
-					color: #000;
-					font-weight: bold;
-					font-size: 12px;
-				}
-			}
-
-			a:hover {
-				text-decoration: none;
-				background: $brandGreyRollover !important;
-							
-				span {
-					color: $brandRed;
-				}
-			}
-		}
-	}
-}
-
 #Header {
 	$topbottom: $gridSpacing * 2;
 	$pictureNavWidth: 140px + $topbottom;
 	
 	position: relative;
 	background: $brandRed;
+	margin-bottom: $menuHeight - $gridSpacing;
 	
 	@include pie-clearfix;
 
@@ -84,7 +34,7 @@
 	.Logo {
 		display: block;
 		margin: $topbottom 0 $topbottom 10px;
-		width: $gridSize + $gridSpacing;
+		width: $menuOffset - 10px;
 	}
 
 	.Menu, .Search {
@@ -99,6 +49,7 @@
 	
 	.Menu {
 		@include caps;
+		@extend .fontGothamBook;
 	
 		#ProductMenu {
 			a:hover, .active {

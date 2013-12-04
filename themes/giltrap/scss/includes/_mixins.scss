@@ -5,6 +5,11 @@ $mobileSpacing: 10px; // External spacing on mobile
 $cellPadding: 15px; // Internal padding
 $paddedWidth: $gridSize - $gridSpacing;
 
+// Top Nav Spacing
+$navSpacing: 30px;
+$menuHeight: 30px;
+$menuOffset: $gridSize * 0.94;
+
 @function gridSize($columns) {
 	@return $columns * ($gridSize + $gridSpacing) - $gridSpacing;
 }
@@ -12,8 +17,6 @@ $paddedWidth: $gridSize - $gridSpacing;
 @function rowSpan($rows, $height){
 	@return ($rows * $height) + $gridSpacing;
 }
-
-
 
 @mixin input-placeholder {
     &.placeholder { @content; }

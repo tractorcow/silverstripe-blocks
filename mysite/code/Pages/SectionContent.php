@@ -12,7 +12,7 @@
 class SectionContent extends Page {
 
   private static $db = array(
-    "ImageAlign" => "Enum(array('Left', 'Right'))"
+    'ImageAlign' => 'Enum(array("Left", "Right"))'
   );
 
   private static $many_many = array(

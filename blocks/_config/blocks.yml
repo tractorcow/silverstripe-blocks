@@ -1,0 +1,10 @@
+SiteConfig:
+  extensions: 
+   - BlocksSiteConfigExtension
+SiteTree:
+  extensions:
+    - BlocksSiteTreeExtension
+ContentController:
+  extensions:
+    - BlocksContentControllerExtension
+

@@ -32,10 +32,7 @@ class HomePage extends Page {
 	public function getCMSFields(){
     	$fields = parent::getCMSFields();
     	$config = GridFieldConfig_Custom::create();
-    	// Grid Edit Form
-    	// Find Component by name
-    	//$gridField = new GridField('TeaserBox', 'TeaserBox', $this->TeaserBox(), $config);
-    	//$fields->addFieldToTab("Root.TeaserBoxes", $gridField);
+    	$fields->removeByName("MainImage");
     	$gridField = new GridField('HeroSlides', 'HeroSlides', $this->HeroSlides(), $config);
     	$fields->addFieldToTab("Root.HeroSlides", $gridField);
     	return $fields;

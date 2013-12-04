@@ -21,6 +21,7 @@
         "silverstripe/blog": "dev-master",
 		"simplepie/simplepie": "dev-master",
 		"silverstripe/userforms": "2.0.1",
-		"unclecheese/betterbuttons": "dev-master"
+		"unclecheese/betterbuttons": "dev-master",
+		"ajshort/silverstripe-gridfieldextensions": "dev-master"
 	}
 }

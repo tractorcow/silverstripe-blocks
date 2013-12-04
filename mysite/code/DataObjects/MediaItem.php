@@ -13,7 +13,7 @@ class MediaItem extends DataObject {
 		'Title' => 'Text',
 		'Description' => 'Text',
 		'VideoEmbed' => 'Text',
-        "Type" => "Enum('Image, Embedded Video', 'Image')",
+        'Type' => 'Enum("Image, Embedded Video", "Image")',
     );
 
     private static $has_one = array(

@@ -38,9 +38,19 @@
 <!-- Homepage bottom section -->
 <div class="Container">
 	<div class="col grid">
-		<section id="Block2">
-			<div class="Widget Stacked"><% include Block %></div>
-			<div class="Widget">$PlaceholdIt(310,230,'Block Image')</div>
+		<section id="Block2" class='block-area' data-areaid='$AreaID'>
+			$BlockArea(LowerTallBlock)
+			<% loop Blocks %>
+				<div class="Widget Stacked">
+					<div class="Block">
+					<h3>$Description</h3>
+					<% if LinkText %>
+					<p><a href="#">&gt; $LinkText</a></p>
+					<% end_if %>
+					</div>
+				</div>
+			<div class="Widget">$Image.CroppedImage(310,230)</div>
+			<% end_loop %>
 		</section>
 	</div>
 	<div class="col grid">

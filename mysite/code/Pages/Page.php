@@ -19,10 +19,11 @@ class Page extends SiteTree {
 	);
 	
 	private static $many_many = array(
-		'FooterModules' => 'FooterModule'
+		'FooterModules' => 'FooterModule',
 	);
 
 	private static $many_many_extraFields = array(
+		
 		'FooterModules' => array(
 			'SortOrder' => 'Int'
 		)
@@ -38,11 +39,15 @@ class Page extends SiteTree {
     public function getCMSFields(){
     	$fields = parent::getCMSFields();
     	$fields->removeByName("GoogleAnalytics");
+    	
     	$config = GridFieldConfig_Custom::create();
     	$config->addSortable('SortOrder');
     	$config->addRelationHandling();
-    	$gridField = new GridField('FooterModules', 'FooterModules', $this->FooterModules(null, 'SortOrder'), $config);
+
     	$fields->addFieldToTab("Root.MainImage", new UploadField('MainImage'));
+
+    	/* Footer Modules */
+    	$gridField = new GridField('FooterModules', 'FooterModules', $this->FooterModules(null, 'SortOrder'), $config);
     	$fields->addFieldToTab("Root.WhatCanWeDoForYou", $gridField);
     	return $fields;
     }

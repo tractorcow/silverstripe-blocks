@@ -8,8 +8,8 @@
 class DealerListing extends Page {
 
 	private static $has_many = array(
-  		"OfficeAddresses" => "OfficeAddress",
-  		"Dealers" => "Dealer",
+  		'OfficeAddresses' => 'OfficeAddress',
+  		'Dealers' => 'Dealer',
     );
 
     public function getCMSFields(){

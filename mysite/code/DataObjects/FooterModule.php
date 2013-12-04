@@ -29,6 +29,12 @@ class FooterModule extends DataObject {
     	'Page' => 'Page'
     );
 
+    public static $summary_fields = array( 
+      'Title' => 'Title',
+      'Description' => 'Description',
+      'SortOrder' => 'Position',
+    );
+
 	public function getCMSFields() {
 		return new FieldList(
         	new TextField('Title'),
